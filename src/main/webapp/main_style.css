@@ -1,0 +1,112 @@
+    * {
+        outline: 0;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Source Sans Pro', sans-serif;
+
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        
+    }
+
+   html{
+        width: 100%;
+        height: 100%;
+    }
+
+    body{
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            background-color: #f1f1f5;
+            
+    }
+
+    ul{
+        padding: 0;
+    }
+    .icon{
+        font-size: 32px;
+        
+    }
+  
+    
+    #navbar{
+        padding: 20px 0 0;
+        background-color: black;
+        
+    }
+    #one{
+        padding: 0 90px;
+        height: 50px;
+        display: block;
+        line-height: 30px;
+        vertical-align: middle;
+        
+    }
+   
+    #one li{
+        display: inline-block;
+    } 
+   .white_font{
+       color:white;
+   }
+    #logo{
+        font-size: 32px;
+        color: white;
+        margin-right: 40px;
+        font-weight: 600;
+
+    }
+    #search{
+        display: inline-block;
+        line-height: 32px;
+        height: 30px;
+        width: 195px;
+        vertical-align: middle;
+}
+    
+
+    #two{
+        height:54px;
+        background-color: white;
+        font-size: 16px;
+        color:black;
+        padding: 0 90px;
+    }
+
+    #two{
+        display: block;
+        height: 60px;
+       text-align: center;
+       line-height: 60px;
+       vertical-align: middle;
+    }
+    #two li{
+        text-align: right;
+        
+        display: inline-block;
+        
+    }
+    .fl_l{
+        border-radius: 4px;
+        float: left;
+        margin-right: 20px;
+    }
+    #info{
+        float: left;
+        margin-right: 40px;
+    }
+    .fl{
+        float:right;
+        margin-left: 20px;
+    }
+
+    canvas{
+        width: 100%;
+        height: 80%;
+        background-color: green;
+    }

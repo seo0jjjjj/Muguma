@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 | 무그마 스토어</title>
+<!--css파일 --><link href="register_style.css" rel="stylesheet">
+<!--노토산 글씨체--><link rel="preconnect" href="https://fonts.googleapis.com">
+<!--노토산 글씨체--><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--노토산 글씨체--><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="register_div">
+	<span id="register_txt">회원가입</span>
+	<hr>
+	<form action="register.jsp" method="post" name=loginregister>
+            <div class="margin8px">
+            <p class="register_info">아이디</p>
+			<input type="text" name="userid" class="inputbox" placeholder="아이디"> <br>
+            </div>
+            
+            <div class="margin8px">
+            <p class="register_info">비밀번호</p>
+			<input type="password" name="password" class="inputbox" placeholder="숫자,영문,특수기호 조합 최소 8자"> <br>
+			<input type="password" name="passwordconfirm" class="inputbox" placeholder="비밀번호 재확인"> <br>
+        </div>
+            <div class="margin8px">
+            <p class="register_info">이름</p>
+            <input type="text" name="username" class="inputbox" placeholder="이름"> <br>
+        </div>
+            <div class="margin8px">
+            <p class="register_info">이메일</p>
+			<input type="email" name="useremail" class="inputbox" placeholder="이메일"> <br>
+        </div>
+            <div class="margin8px">
+            <p class="register_info">전화번호</p>
+			<input type="text" name="usertel" class="inputbox" placeholder="전화번호"> <br>
+			
+            <p class="register_info">성별</p>
+            <div class="selectBox">
+            
+            
+            
+            <select class="select" name =sex>
+				<option>성별</option>
+				<option value="M">남자</option>
+				<option value="W">여자</option>
+			</select>
+                 <span class="icoArrow"><img src="https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png" alt=""></span> 
+             </div>
+            </div>
+                <div class="margin8px">
+		    	<button id="register_button">회원가입</button>
+            </div>
+	</form>
+</div>
+</body>
+</html>

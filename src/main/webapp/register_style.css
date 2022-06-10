@@ -1,0 +1,128 @@
+
+body, html{
+    padding: 0;  
+    margin: 0;
+    height: 100%;
+    background-color: #f1f1f1;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{    
+    min-height: 100%;
+    padding-top: 80px;
+    margin: 0;
+    min-width: 404px;
+    border-radius: 4px;
+    background-color: white;
+    width: fit-content;
+    height: 100%;
+    margin-left: auto; /*중앙정렬*/
+    margin-right: auto;
+}
+
+input:focus{
+    outline: #feb180 1px solid;
+}
+
+
+
+#register_div{
+    margin:0 48px;
+}
+
+#register_txt{ 
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.register_info{
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    width: 403px;
+}
+.inputbox{
+    margin-top:0;
+    width: 400px;
+    height: 56px;
+    border: none;
+    font-weight: 400;
+    color:#222;
+    font-size:16px;
+    border: 1px #dbdbdb solid;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.inputbox{
+    font-size: 16px;
+    color: #767676;
+    
+}
+
+/*select 버튼 디자인*/
+.selectBox {
+    position: relative;
+    width: 150px;
+    height: 35px;
+    border-radius: 4px;
+    border: 2px solid #dbdbdb;
+  }
+  .selectBox .select {
+    width: inherit;
+    height: inherit;
+    background: transparent;
+    border: 0 none;
+    outline: 0 none;
+    padding: 0 5px;
+    position: relative;
+    z-index: 3; 
+  }
+  .selectBox .select option {
+  color: #111;
+    padding: 3px 0;
+    font-size: 16px;
+  }
+  .selectBox .icoArrow {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    z-index: 1; 
+    width: 35px; 
+    height: inherit;
+    border-left: 2px solid #dbdbdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .selectBox .icoArrow img {
+    width: 50%;
+    transition: .3s; 
+  }
+  .selectBox .select:focus + .icoArrow img {
+    transform: rotate(180deg);
+  }
+
+  /*!!select 버튼 디자인!!*/
+
+
+#register_button {
+    margin-top:40px;
+    width: 400px;
+    border: none;
+    background-color:#feb180;
+    height: 56px;
+    display: block;
+    font-size: 16px;
+    color:white;
+    padding : 0;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+
+.margin8px {
+    margin-top :8px;
+}

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+body, html{
+    padding: 0;  
+    margin: 0;
+    height: 100%;
+    background-color: #f1f1f1;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    left:0;
+    right:0;
+    border-radius: 4px;
+    background-color: white;
+    width: fit-content;
+    min-width: 404px;
+    height: 100%;
+    margin-left: auto; /*중앙정렬*/
+    margin-right: auto;
+}
+
+#login_div{
+    padding-top: 48px;
+    margin: 0 48px;
+}
+#login_txt{ 
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin-top: 80px;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+#login_form{
+    margin-top: 24px;
+}
+
+
+form .inputbox{
+    width: 400px;
+    height: 56px;
+    border: none;
+    font-weight: 400;
+    color:#222;
+    font-size:16px;
+    border-bottom: 1px #dbdbdb solid;
+}
+input[type="password"]{
+    margin-top:20px;
+}
+form .inputbox::placeholder{
+    font-size: 16px;
+    color: #767676;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+
+
+#login_keep_span{
+    color: #767676;
+    font-size: 15px;
+    margin-top: 20px;
+    display: block;
+    vertical-align: middle;
+
+}
+
+
+#login_button {
+    margin-top:40px;
+    width: 400px;
+    border: none;
+    background-color:#feb180;
+    height: 56px;
+    display: block;
+    font-size: 16px;
+    color:white;
+    padding : 0;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+#login_signup{
+    display: inline-block;
+    width: fit-content;
+    font-size:16px;
+    color: #767676;
+
+    text-decoration: none;
+}
+#login_find{
+    float: right;
+    display: inline-block;
+    width: fit-content;
+    font-size:16px;
+    color: #767676;
+
+    text-decoration: none;
+}
+
+register_info{
+    font-size: 16px;
+    color: #767676;
+}
