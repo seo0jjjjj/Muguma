@@ -12,9 +12,7 @@
 </head>
 <body>
 <%
-	UserDAO var = UserDAO.getInstance();
-	int i = var.last_uid();
-	out.print(i);	
+	User
 		
 %>
 </body>

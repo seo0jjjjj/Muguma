@@ -31,25 +31,28 @@ public class BorderDAO {
 	public void connect() {
 		this.conn = DBCon.getInstance().getConnection();
 	}
-	public void disconnect() {
+	// db 연결 해제
+	private void disconnect() {
+		System.out.println("[BorderDAO] Disconnect 진행");
 		if (pstmt != null) {
 			try {
 				pstmt.close();
+				System.out.println("▶ PreparedStatement Dispose 완료");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 		if (conn != null) {
 			try {
-				conn.close();
-			} catch (SQLException e) {
+				DBCon.getInstance().dispose();
+				System.out.println("▶ DBCon에 dispose 요청 완료");
+			} catch (Exception e) {
 				e.printStackTrace();
 
 			}
 		}
+
 	}
-	
-	
 	///글 쓰기 
 	public void setBorder(BorderDTO border) {
 		connect();

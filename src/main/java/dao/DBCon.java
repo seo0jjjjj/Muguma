@@ -11,7 +11,7 @@ public class DBCon {
 	private static DBCon instance; 
 	private Connection conn=null; 
 	private PreparedStatement pstmt=null;
-	final String JDBC_URL = "com.mysql.jdbc.Driver";
+	final String JDBC_URL = "com.mysql.cj.jdbc.Driver";
 
 	
 	// static block을 이용한 singleton
@@ -32,12 +32,15 @@ public class DBCon {
 	}
 	
 	public Connection getConnection() {
+		if(conn == null) initConnection();
 		return conn;
 	}
 	public void dispose() {
 		if(conn != null) {
 			try {
 				conn.close();
+				conn = null;
+				System.out.println("▶ [DBCon] Connection closed 완료");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -52,7 +55,7 @@ public class DBCon {
 		} catch (SQLException e) {
 			System.out.println(e); // SQL
 		}
-		System.out.println("done connect init");
+		System.out.println("[DBCon] conn 초기화 ");
 }
 
 }

@@ -12,9 +12,10 @@ public class UserDTO {
 	private String Sex; //varchar(5),
 	private String authority;
 	
-	public int getUid() {
-		return uid;
+	public int getUid() { 
+		return uid; //setter
 	}
+
 	public void setUid(int uid) {
 		this.uid = uid;
 	}
