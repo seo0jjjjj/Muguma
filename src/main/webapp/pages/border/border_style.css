@@ -1,0 +1,28 @@
+@charset "EUC-KR";
+
+.border {
+	width:100%;
+	margin-top:10%;
+	margin-left:15%;
+	margin-right:15%;
+	text-align: center;
+}
+                                   
+
+.table {
+	width:70%;
+	text-align:center;
+	border-color: #767676;
+	border-top: 1px solid #767676; 
+	border-bottom: 0px solid #767676;
+	}
+
+.table th{
+	background-color: #eeeeee; 
+}
+
+.table td {
+	border-bottom: 1px solid #dddddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #dddddd;
+}

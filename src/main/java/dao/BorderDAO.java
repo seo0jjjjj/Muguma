@@ -16,6 +16,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.border.Border;
 
@@ -25,7 +27,6 @@ public class BorderDAO {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs =null;
-	BorderDTO border = new BorderDTO();
 	String sql="";
 	
 	public void connect() {
@@ -53,45 +54,83 @@ public class BorderDAO {
 		}
 
 	}
+	
+	//글쓰기 날짜 
+	public String getDate() {
+		String sql="select now()";
+		try {
+			PreparedStatement pstmt=conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getString(1);
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return " ";
+	}
+	
+	//글 번호 
+	public int getBid() {
+		String sql="select bid from border order by bid desc";
+		try {
+			PreparedStatement pstmt=conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				return rs.getInt(1)+1;
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+	
 	///글 쓰기 
-	public void setBorder(BorderDTO border) {
+	public int setBorder(String title,String userID,String content) {
 		connect();
+		int bid=getBid();
+		String date=getDate();
 		try {
 			sql="insert into Border values (?,?,?,?,?)";
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setInt(1, border.getBid());
-			pstmt.setString(2, border.getTitle());
-			pstmt.setString(3, border.getUserID());
-			pstmt.setString(4, border.getContent());
-			pstmt.setString(5, border.getDate());
-			pstmt.executeUpdate();
+			pstmt.setInt(1, bid);
+			pstmt.setString(2, title);
+			pstmt.setString(3, userID);
+			pstmt.setString(4, content);
+			pstmt.setString(5, date);
+			return pstmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			disconnect();
 		}
+		return -1;
 	}
 	
 	///모든 글 출력 
-	public BorderDTO getBorder() {
+	public ArrayList<BorderDTO> getBorder() {
 		connect();
+		sql="select * from Border";
+		ArrayList<BorderDTO> datas=new ArrayList<BorderDTO>();
 		try {
-			sql="select * from Border";
 			pstmt=conn.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			
-			if(rs.next()) {
+			while(rs.next()) {
+				BorderDTO border=new BorderDTO();
 				border.setBid(rs.getInt("bid"));
 				border.setTitle(rs.getString("title"));
 				border.setUserID(rs.getString("userID"));
 				border.setContent(rs.getString("content"));
-				border.setDate(rs.getString("data"));
+				//border.setDate(rs.getString("data"));
+				datas.add(border);
 			}
+			rs.close();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
 			disconnect();
 		}
-		return border;
+		return datas;
 	}
 }
