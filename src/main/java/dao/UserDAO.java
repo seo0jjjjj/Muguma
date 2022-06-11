@@ -39,7 +39,7 @@ public class UserDAO {
 		String sql = "insert into user(uid,userID,userPassword,userName,userEmail,userTel,userAddress,Sex,authority) values(?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userDTO.getUid());
+			pstmt.setInt(1, userDTO.getUid());
 			pstmt.setString(2, userDTO.getUserID());
 			pstmt.setString(3, userDTO.getUserPassword());
 			pstmt.setString(4, userDTO.getUserName());
@@ -60,14 +60,14 @@ public class UserDAO {
 		return true;
 	}
 
-	}
+	
 
 	public boolean updateDB(UserDTO userDTO) {
 		connect();
 		String sql = "update user set ";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userDTO.getUid());
+			pstmt.setInt(1, userDTO.getUid());
 			pstmt.setString(2, userDTO.getUserID());
 			pstmt.setString(3, userDTO.getUserPassword());
 			pstmt.setString(4, userDTO.getUserName());
