@@ -1,4 +1,5 @@
-<%@page import="dao.DBCon"%>
+
+<%@page import="dao.UserDAO"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -11,16 +12,9 @@
 </head>
 <body>
 <%
-
-		PreparedStatement pstmt =  DBCon.getInstance().getConnection().prepareStatement("insert into test values(?,?)");
-		
-		pstmt.setString(1,"testID2");
-		pstmt.setString(2,"testPW2");
-		
-		pstmt.executeUpdate();
-
-		pstmt.close();
-	
+	UserDAO var = UserDAO.getInstance();
+	int i = var.last_uid();
+	out.print(i);	
 		
 %>
 </body>
