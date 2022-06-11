@@ -93,6 +93,6 @@ public class ProductDAO {
 	
 	/// 상품 검색 출력 
 	public int selectProduct() {
-		
+		return -1;
 	}
 }
