@@ -5,8 +5,10 @@
 // 세션의 모든 데이터 삭제
 session.invalidate();
 
-response.sendRedirect("./../main/main.jsp");
-
+out.println("<script>");
+out.println("alert('로그아웃되었습니다.');");
+out.println("location.href = './../main/main.jsp';");
+out.println("</script>");
 %>
 <!DOCTYPE html>
 <html>

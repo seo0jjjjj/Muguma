@@ -16,24 +16,24 @@
 	<form action="register.jsp" method="post" name=loginregister>
             <div class="margin8px">
             <p class="register_info">아이디</p>
-			<input type="text" name="userID" class="inputbox" placeholder="아이디"> <br>
+			<input type="text" name="userID" class="inputbox" placeholder="아이디" maxlength="20"> <br>
             </div>  
             <div class="margin8px">
             <p class="register_info">비밀번호</p>
-			<input type="password" name="userPassword" class="inputbox" placeholder="숫자,영문,특수기호 조합 최소 8자"> <br>
-			<input type="password" name="passwordconfirm" class="inputbox" placeholder="비밀번호 재확인"> <br>
+			<input type="password" name="userPassword" class="inputbox" placeholder="숫자,영문,특수기호 조합 최소 8자" maxlength="20"> <br>
+			<input type="password" name="passwordconfirm" class="inputbox" placeholder="비밀번호 재확인" maxlength="20"> <br>
         </div>
             <div class="margin8px">
             <p class="register_info">이름</p>
-            <input type="text" name="userName" class="inputbox" placeholder="이름"> <br>
+            <input type="text" name="userName" class="inputbox" placeholder="이름" maxlength="20"> <br>
         </div>
             <div class="margin8px">
             <p class="register_info">이메일</p>
-			<input type="email" name="userEmail" class="inputbox" placeholder="이메일"> <br>
+			<input type="email" name="userEmail" class="inputbox" placeholder="이메일" maxlength="20"> <br>
         </div>
             <div class="margin8px">
             <p class="register_info">전화번호</p>
-			<input type="text" name="userTel" class="inputbox" placeholder="전화번호"> <br>
+			<input type="text" name="userTel" class="inputbox" placeholder="전화번호" maxlength="13" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}"> <br>
 			
             <p class="register_info">성별</p>
             <div class="selectBox">

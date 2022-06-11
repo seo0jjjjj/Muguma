@@ -24,7 +24,7 @@ else {
 <head>
 <meta charset="UTF-8">
 <title>무그마 스토어</title>
-<link rel="stylesheet" href="main_style.css">
+<link rel="stylesheet" href="main_style.css">	
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">

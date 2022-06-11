@@ -1,0 +1,11 @@
+외부 jar 사용
+
+# 메일 보내는 기능 구현을 위해 사용
+activation-1.1.1 
+javax.mail.jar 
+
+# 해시값 인코딩 
+commons-codec-1.9
+
+# JDBC 연결
+mysql-connector-java-8.0.28
