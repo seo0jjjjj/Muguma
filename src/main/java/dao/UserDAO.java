@@ -11,7 +11,21 @@ import dto.UserDTO;
 public class UserDAO {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
-
+	
+	private static UserDAO instance;
+	private UserDAO() {}
+	static {
+		try {
+			instance = new UserDAO();
+		} catch (Exception e) {
+			throw new RuntimeException("Exception UserDao 인스턴스 생성 오류");
+		}
+	}
+	
+	public static UserDAO getInstance() {
+		return instance;
+	}
+	
 	public void connect() {
 		this.conn = DBCon.getInstance().getConnection();
 	}
@@ -33,9 +47,32 @@ public class UserDAO {
 			}
 		}
 	}
-//INSERT
+	//uid의 최댓값을 구함. (새로운 uid를 부여하기 위함)
+	public int last_uid() {
+		connect();
+		String sql = "select Max(uid) from user";
+		int max_uid = -1;
+		try {
+			
+			pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
+			rs.next();
+			max_uid =rs.getInt("Max(uid)");
+			System.out.println(max_uid);
+			rs.close();
+		}
+		// sql에러
+		catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		return max_uid;
+	}
+//INSERT문 
 	public boolean insertDB(UserDTO userDTO) {
 		connect();
+		//
 		String sql = "insert into user(uid,userID,userPassword,userName,userEmail,userTel,userAddress,Sex,authority) values(?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -64,7 +101,7 @@ public class UserDAO {
 
 	public boolean updateDB(UserDTO userDTO) {
 		connect();
-		String sql = "update user set ";
+		String sql = "update user set userID=?,userPassword=?,userName=?,userEmail=?,userTel=?,userAddress=?,Sex=?,authority=? where uid=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, userDTO.getUid());

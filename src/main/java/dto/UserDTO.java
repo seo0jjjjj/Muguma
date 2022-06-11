@@ -13,7 +13,7 @@ public class UserDTO {
 	private String authority;
 	
 	public int getUid() {
-		return userID;
+		return uid;
 	}
 	public void setUid(int uid) {
 		this.uid = uid;
