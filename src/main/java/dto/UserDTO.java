@@ -1,14 +1,23 @@
-package Beans;
+package dto;
 
-public class UserBean {
+public class UserDTO {
 
+	private int uid;
 	private String userID; //varchar(20), key 
 	private String userPassword; //varchar(20),
 	private String userName; //varchar(20),
 	private String userEmail; //varchar(20),
 	private String userTel; //varchar(12),
-	private String userAdress; //varchar(50),
+	private String userAddress; //varchar(50),
 	private String Sex; //varchar(5),
+	private String authority;
+	
+	public int getUid() {
+		return userID;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
 	public String getUserID() {
 		return userID;
 	}
@@ -39,11 +48,11 @@ public class UserBean {
 	public void setUserTel(String userTel) {
 		this.userTel = userTel;
 	}
-	public String getUserAdress() {
-		return userAdress;
+	public String getUserAddress() {
+		return userAddress;
 	}
-	public void setUserAdress(String userAdress) {
-		this.userAdress = userAdress;
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
 	}
 	public String getSex() {
 		return Sex;
@@ -51,5 +60,10 @@ public class UserBean {
 	public void setSex(String sex) {
 		Sex = sex;
 	}
-	
+	public String getAuthority() {
+		return authority;
+	}
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
 }
