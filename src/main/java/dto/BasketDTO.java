@@ -1,16 +1,16 @@
 package dto;
 
 public class BasketDTO {
-	private int sid; //sid int
+	private int uid; //uid int
 	private int pid; //pid int
 	private String userName; //userName varchar(10)
 	private String date; //date date
 
-	public int getSid() {
-		return sid;
+	public int getUid() {
+		return uid;
 	}
-	public void setSid(int sid) {
-		this.sid = sid;
+	public void setUid(int sid) {
+		this.uid = sid;
 	}
 	public int getPid() {
 		return pid;
