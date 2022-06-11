@@ -124,7 +124,7 @@ public class UserDAO {
 		}
 		return true;
 	}
-
+	
 	public boolean deleted(int uid) {
 		connect();
 		String sql = "delete from user where uid=?";

@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-///CONN을
+///Connection을 싱글톤으로 구현하는 클래스
 public class DBCon {
 
-	private static DBCon instance;
-	private Connection conn=null;
+	private static DBCon instance; 
+	private Connection conn=null; 
 	private PreparedStatement pstmt=null;
 	final String JDBC_URL = "com.mysql.jdbc.Driver";
 
@@ -23,7 +23,7 @@ public class DBCon {
 		}
 	}
 	
-	private DBCon() {
+	private DBCon() { //생성자
 		initConnection(); //MYSQL 연결
 	}
 
