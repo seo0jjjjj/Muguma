@@ -16,8 +16,13 @@
 </head>
 <body>
 <%
-	//유저 세션에서 userID 가져오기 
 	String userID=null;
+	String userName=null;
+	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //로그인 정보를 담는 세션 객체
+	userID = userdto.getUserID();
+	userName= userdto.getUserName();
+	
+	//유저 세션에서 userID 가져오기 
 	if(session.getAttribute("userID")!=null){
 		userID = (String)session.getAttribute("userID");
 	}
@@ -43,7 +48,7 @@
 		//글 쓰기 
 		}else{
 			BorderDAO borderDAO=new BorderDAO();
-			int result=borderDAO.setBorder(borderInfo.getTitle(), userID, borderInfo.getContent());
+			int result=borderDAO.setBorder(borderInfo.getTitle(), userName, borderInfo.getContent());
 			//DB오류 
 			if(result==-1){
 				PrintWriter script= response.getWriter();

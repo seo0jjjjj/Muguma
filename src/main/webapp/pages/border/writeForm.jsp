@@ -5,6 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <!--css파일 --><link href="write_style.css" rel="stylesheet">
+
 <title>Insert title here</title>
 </head>
 <body>

@@ -1,5 +1,40 @@
 @charset "EUC-KR";
 
+    
+.a{
+	text-decoration: none;
+    color: black; 
+}   
+
+.navbar{
+	padding: 20px 0 0;
+    background-color: black;	
+}
+.one{
+        padding: 0 90px;
+        height: 50px;
+        display: block;
+        line-height: 30px;
+        vertical-align: middle;
+}
+
+.one li{
+    display: inline-block;
+} 
+
+.white_font{
+   color:white;
+}
+    
+.logo{
+	font-size: 32px;
+    color: white;
+    margin-right: 40px;
+    font-weight: 600;
+}
+
+    
+
 .border {
 	width:100%;
 	margin-top:10%;
