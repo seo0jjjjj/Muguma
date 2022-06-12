@@ -19,22 +19,26 @@
 	String userID=null;
 	String userName=null;
 	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //로그인 정보를 담는 세션 객체
-	userID = userdto.getUserID();
-	userName= userdto.getUserName();
 	
-	//유저 세션에서 userID 가져오기 
-	if(session.getAttribute("userID")!=null){
-		userID = (String)session.getAttribute("userID");
+	if(userdto!=null){
+		userID = userdto.getUserID();
+		userName= userdto.getUserName();	
+	}else{
+		PrintWriter script= response.getWriter();
+		script.println("<script>");
+		script.println("alert('로그인을 하세요')");
+		script.println("location.href='./../main/main.jsp'"); 
+		script.println("</script>");
 	}
 	
-	//session을 받아 userID가 아무것도 없는 경우 
+	//session을 받아 아무것도 없는 경우 
 	if(userID==null){
 		PrintWriter script= response.getWriter();
 		script.println("<script>");
 		script.println("alert('로그인을 하세요')");
 		script.println("location.href='./../main/main.jsp'"); 
 		script.println("</script>");
-	//session을 받아 userID가 있을 경우 
+		//session을 받아 userID가 있을 경우 
 	}else {
 		String title=borderInfo.getTitle();
 		String content=borderInfo.getContent();
