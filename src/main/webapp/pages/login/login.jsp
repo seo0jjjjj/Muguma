@@ -19,7 +19,10 @@
 	//POST이외의 요청으로 접근시
 	if (!request.getMethod().equals("POST")) {
 		//메인 페이지로 이동
-		response.sendRedirect("./../main/main.jsp");
+		out.println("<script>");
+	    out.println("alert('잘못된 접근입니다.');");
+	    out.println("location.href = './../main/main.jsp';");;
+	    out.println("</script>");
 	}
 	//
 	else {

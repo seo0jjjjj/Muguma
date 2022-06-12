@@ -85,12 +85,15 @@ public class UserDAO {
 
 //INSERT문 
 	public boolean insertDB(UserDTO userDTO) {
+		int uid = last_uid() + 1;
 		connect();
 		//
 		String sql = "insert into user(uid,userID,userPassword,userName,userEmail,userTel,userAddress,Sex,authority) values(?,?,?,?,?,?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, last_uid() + 1); // 가입시 기존 uid+1 부여
+
+			System.out.println("▶ DB에 Insert 요청");
+			pstmt.setInt(1, uid); // 가입시 기존 uid+1 부여
 			pstmt.setString(2, userDTO.getUserID());
 			pstmt.setString(3, userDTO.getUserPassword());
 			pstmt.setString(4, userDTO.getUserName());
@@ -100,6 +103,17 @@ public class UserDAO {
 			pstmt.setString(8, userDTO.getSex());
 			pstmt.setString(9, userDTO.getAuthority());
 			pstmt.executeUpdate();
+
+			System.out.println("\t ▶ uid :" + uid); // 가입시 기존 uid+1 부여
+			System.out.println("\t ▶ userID :" + userDTO.getUserID());
+			System.out.println("\t ▶ userPassword :" + userDTO.getUserPassword());
+			System.out.println("\t ▶ userName :" + userDTO.getUserName());
+			System.out.println("\t ▶ userEmail :" + userDTO.getUserEmail());
+			System.out.println("\t ▶ userTel :" + userDTO.getUserTel());
+			System.out.println("\t ▶ userAddress :" + userDTO.getUserAddress());
+			System.out.println("\t ▶ Sex :" + userDTO.getSex());
+			System.out.println("\t ▶authority :" + userDTO.getAuthority());
+
 		}
 		// sql에러
 		catch (SQLException e) {
@@ -136,7 +150,24 @@ public class UserDAO {
 		}
 		return true;
 	}
-
+	public boolean updatePW(int uid,String pw) {
+		connect();
+		String sql = "update user set userPassword=? where uid=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pw);
+			pstmt.setInt(2, uid);
+			pstmt.executeUpdate();
+		}
+		// sql에러
+		catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			disconnect();
+		}
+		return true;
+	}
 	public boolean deleted(int uid) {
 		connect();
 		String sql = "delete from user where uid=?";
@@ -182,7 +213,6 @@ public class UserDAO {
 			e.printStackTrace();
 		} finally {
 			disconnect();
-			System.out.println("finally called");
 		}
 		return userDTO;
 	}
@@ -254,4 +284,72 @@ public class UserDAO {
 		}
 		return uid;
 	}
+
+	// 아이디 및 비밀번호찾기 에서 아이디를 찾는 작업
+	public String findId(String userEmail) {
+
+		connect();
+		String sql = "select * from user where userEmail=?";
+		String id = ""; // 아이디를 담는 객체
+		try {
+			// sql문 작성
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userEmail);
+
+			ResultSet rs = pstmt.executeQuery();
+			// 반환된 sql문 분석
+			if (rs.next()) { // id가 존재할경우
+				id = rs.getString("userID");
+				System.out.println("[UserDAO] 아이디 찾기 성공 (ID:" + id + ")");
+
+			} else { // id가 없음.
+				id = "error";
+				System.out.println("[UserDAO] 해당 이메일에 존재하는 아이디가 없음.");
+			}
+
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("[UserDAO] findId Exception");
+
+		} finally {
+			disconnect();
+		}
+		return id;
+	}
+
+	// 아이디 및 비밀번호찾기 에서 Uid 찾는 작업
+	public int findUid (String userEmail, String userID) {
+			
+			connect();
+			String sql = "select * from user where userEmail=? AND userID=?";
+			int uid=0; // uid 
+			try {
+				// sql문 작성
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, userEmail);
+				pstmt.setString(2, userID);
+				
+				ResultSet rs = pstmt.executeQuery();
+				// 반환된 sql문 분석
+				if (rs.next()) {
+					uid = rs.getInt("uid");
+					System.out.println("[UserDAO] 비밀번호 찾기 성공 (UID:"+uid+")");
+					
+				} else {
+					System.out.println("[UserDAO] 아이디와 이메일에 존재하는 아이디가 없음.");
+					uid = -1;
+				}
+
+				rs.close();
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println("[UserDAO] findUid Exception");
+
+			} finally {
+				disconnect();
+			}
+			return uid;
+		}
 }

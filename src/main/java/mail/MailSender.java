@@ -74,6 +74,7 @@ public class MailSender {
 			System.out.println("▶ 인증 Email 전송됨 (인증번호:"+verification_code+")");
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			verification_code = "error";
 		} finally {
 			transport.close();
 			return verification_code;

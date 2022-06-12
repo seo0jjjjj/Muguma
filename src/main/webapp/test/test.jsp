@@ -13,9 +13,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	MailSender.getInstance().sendMail("seo0jjjjj@gmail.com");
+	<!-- 비밀번호 찾기  -->
+	<%-- 
+	<%=	UserDAO.getInstance().findUid("seo0jjjjj@gmail.com","sample1234")%>
+	--%>
 
-	%>
+
+
 </body>
 </html>
