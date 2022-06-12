@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div class="don"><h1>Mugema</h1></div>
 	<!-- 글쓰기 양식 보여지는 문-->
 	<div class="Container">
@@ -21,11 +22,11 @@
 					</thead>
 					<tbody>
 						<tr>
-						<td><input type="text" class=" " placeholder="글 제목" name="borderTitle" maxlength="50"> 
+						<td><input type="text" class=" " placeholder="글 제목" name="title" maxlength="50"> 
 						</td>
 						</tr>
 						<tr>
-						<td><textarea placeholder="글 내용" name="Content" maxlength="1024" style="height:350px; width: 600px"></textarea>
+						<td><textarea placeholder="글 내용" name="content" maxlength="1024" style="height:350px; width: 600px"></textarea>
 						</td>
 						</tr>
 					</tbody>

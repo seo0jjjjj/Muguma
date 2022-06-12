@@ -1,11 +1,15 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="dao.BorderDAO" %>
+<%@page import="dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
 <jsp:useBean id="borderInfo" class="dto.BorderDTO"></jsp:useBean>
 <jsp:setProperty property="title" name="borderInfo"/>
 <jsp:setProperty property="content" name="borderInfo"/>
+<jsp:useBean id="userInfo" class="dto.UserDTO"></jsp:useBean>
+<jsp:setProperty property="userID" name="userInfo" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,10 +18,10 @@
 </head>
 <body>
 <%
-	String userID=null;
-	if(session.getAttribute("userInfo")!=null){
-		userID=(String)session.getAttribute("userInfo");
-	} // 사용자 세션을 못 받아옴 
+	String userID="";
+	if(session.getAttribute("userID")!=null){
+		userID = (String)session.getAttribute("userID");
+	}
 	
 	if(userID==null){
 		PrintWriter script= response.getWriter();
@@ -26,6 +30,8 @@
 		script.println("location.href='./../main/main.jsp'"); 
 		script.println("</script>");
 	}else {
+		String title=borderInfo.getTitle();
+		String content=borderInfo.getContent();
 		if(borderInfo.getTitle()==null||borderInfo.getContent()==null){
 			PrintWriter script= response.getWriter();
 			script.println("<script>");
@@ -45,6 +51,10 @@
 			}else {
 				PrintWriter script= response.getWriter();
 				script.println("<script>");
+				System.out.println("▶▶ 로그인 된 uid:"+userInfo.getUid());
+				System.out.println("▶ 작성자:"+userID);
+				System.out.println("▶ 제목:"+title);
+				System.out.println("▶ 내용:"+content);
 				script.println("alert('글이 정상적으로 등록되었습니다.')");
 				script.println("location.href='borderForm.jsp'");
 				script.println("</script>");

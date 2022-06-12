@@ -11,6 +11,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	
+%>
 <div class="don"><h1>Mugema</h1></div>
 	<div class="border">
 		<div class="row">
