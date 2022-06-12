@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메일 인증 페이지</title>
+<!-- 보안이 필요한 작업, 비밀번호찾기, 회원가입시 이메일을 보냄. -->
+
+
+<!--css파일 -->
+<link href="security_style.css" rel="stylesheet">
+<!--노토산 글씨체-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!--노토산 글씨체-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--노토산 글씨체-->
+<link
+	href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&amp;display=swap"
+	rel="stylesheet">
+	<!-- 스크립트 추가-->
+	<script src="./security.js"></script>
+</head>
+<body>
+	<div id="security_div">
+		<!-- 아이디 찾기 -->
+		<span class="security_txt">아이디 찾기 </span>
+		<hr>
+
+		<form action="security_mailAuth/security.jsp" method="post" name="formId"
+			accept-charset="UTF-8" onsubmit="return checkEmail(formId)">
+			<div class="margin8px">
+				<p class="security_h2">가입하신 이메일 주소를 입력해주세요.</p>
+				
+				<p class="security_info">이메일</p>
+				<input type="email" name="userEmail" class="inputbox"
+					placeholder="이메일" maxlength="20" value="">
+					
+				<br>
+			</div>
+			<div class="margin8px">
+				<button id="security_button">이메일 보내기</button>
+			</div>
+		</form>
+			<!-- 비밀번호 찾기 -->
+			<form action="security_mailAuth/security.jsp" method="post" name="formPw"
+			accept-charset="UTF-8" onsubmit="return checkEmailAndId(formPw)">
+			<p class="security_txt">비밀번호 찾기</p>
+			<hr>
+
+			<div class="margin8px">
+				
+				<p class="security_h2">가입하신 아이디와 이메일 주소 입력해주세요.</p>
+				<p class="security_info">아이디</p>
+				<input type="text" name="userId" class="inputbox" placeholder="로그인 아이디"
+					maxlength="20" value=""> <br>
+					<p class="security_info">이메일</p>
+					<input type="email" name="userEmail" class="inputbox"
+						placeholder="이메일" maxlength="20" value="">
+
+			</div>
+			<div class="margin8px">
+				<button id="security_button">이메일 보내기</button>
+			</div>
+		</form>
+</body>
+
+</html>
