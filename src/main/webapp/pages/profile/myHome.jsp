@@ -48,7 +48,10 @@
 				<h3>이메일</h3>
 				<p><%=userdto.getUserEmail() %></p>
 			</div>
-			
+			<div class="main_item">
+				<h3><%=isAuthority ? "사용자 문의 글" : "고객센터 문의 글" %></h3>
+				<p></p>
+			</div>
 			
 		</div>
 	</div>
