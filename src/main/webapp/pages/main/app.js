@@ -47,7 +47,7 @@ class App {
 			var y = Math.random() * this.stageHeight * 0.8;
 			var src = this.img_path[i];
 			this.image_path_iterator++;
-			var id = i;
+			var id = i+1; // 그림은 1부터 시작함.
 			this.boxes.push(new Box(x, y, src, id));
 		}
 		
@@ -81,6 +81,7 @@ class App {
 
 
 				// 새로운 이미지 생성
+				var id = this.image_path_iterator+1; //이미지 id는 1부터 시작하므로 1더해줌.
 				var x = this.stageWidth + 500; //화면밖에 생성
 				var y = Math.random() * this.stageHeight * 0.7;
 				if (this.image_path_iterator >= this.img_path.length) { //마지막 이미지 까지 노출되면
@@ -90,7 +91,7 @@ class App {
 
 				//삭제 후 재 배열
 
-				var box = new Box(x, y, src, this.image_path_iterator);
+				var box = new Box(x, y, src, id);
 				this.boxes.splice(i, 1,box);
 	
 				//console.log("[새로운 박스 생성]"+box.speed );

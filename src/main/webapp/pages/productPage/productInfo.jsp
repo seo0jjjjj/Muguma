@@ -1,8 +1,14 @@
+<%@page import="dto.ProductDTO"%>
+<%@page import="dao.ProductDAO"%>
 <%@page import="dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
+<% request.setCharacterEncoding("UTF-8"); %>
+
+<%
+
 UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //로그인 정보를 담는 세션 객체
+
 boolean isLogin = false; // 로그인 상태 여부
 String userName = "";
 //로그인상태가 아닐 경우
@@ -18,6 +24,25 @@ else {
 }
 
 
+%>
+<%-- 클릭한 이미지를 바탕으로 db에서 테이터를 가져옴. --%>
+<%
+	//클릭한 이미지의 pid
+	int pid = 0;
+	//db에서 pid 검색
+	ProductDTO db_product = new ProductDTO(); // 검색할 DTO
+	
+	if(request.getParameter("pid")==null){//db찾기 실패
+		out.println("<script>");
+		out.println("alert('[오류] 데이터베이스에서 해당 그림을 찾을 수 없습니다.');");
+		out.println("location.href = './../main/main.jsp';");
+		out.println("</script>");
+	}
+	//db에서 pid찾기 성공
+	else{
+		pid = Integer.parseInt(request.getParameter("pid"));
+		db_product = ProductDAO.getInstance().getbyUid(pid);
+	}
 %>
 <!DOCTYPE html>
 <html>
@@ -47,7 +72,7 @@ else {
 
 	<div id="navbar">
 		<ul id="one">
-			<li id="logo"><a class="white_font" href=""><i
+			<li id="logo"><a class="white_font" href="./../main/main.jsp"><i
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
@@ -76,23 +101,23 @@ else {
 	<div class="imageBox"> <!--이미지 들어갈곳-->
 	
 		
-		<image src="./../../images/001.jpg" class="img" ></image>
+		<image src="<%="./../../images/"+request.getParameter("pid")+".jpg"  %>" class="img" ></image>
 	</div>	
 	<div class="textInfo">
 		
 	<p class="brand" style="font-size:13px">제목</p><!--브랜드명> 13-->
-	<p class="title" style="font-size:34px; font-weight:700; margin-left:30px">브랜드명</p> <!--제목> 34-->
+	<p class="title" style="font-size:34px; font-weight:700; margin-left:30px"><%=db_product.getProductName() %></p> <!--제목> 34-->
 	<br>
 	<hr>
 	<br>
 	
-	<p style="font-size:28px">가격 <!-- 가격 28폰트 미디움-->
+	<p style="font-size:28px"><%= Integer.toString(db_product.getPrice()) %> <!-- 가격 28폰트 미디움-->
 	<span style="font-size:15px">원</span> <!-- 2픽셀> 원 15폰트-->
 	</p>
 
 	<hr> <!-- 위간격 24 hr 14폰트-->
-	<button onclick="location.href = './writeForm.jsp';" class="btn">구매하기</button>
-	<button onclick="location.href = './writeForm.jsp';" class="btn">장바구니에 담기</button>
+	<button onclick="location.href = './writeForm.jsp';" class="btn-buy">구매하기</button>
+	<button onclick="location.href = './writeForm.jsp';" class="btn-basket">장바구니에 담기</button>
 	
 	</div>
 		

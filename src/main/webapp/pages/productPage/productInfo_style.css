@@ -159,7 +159,7 @@
     margin: 10px;
   }
 
-  .btn {
+  .btn-buy {
     margin-top:40px;
     width: 400px;
     border: none;
@@ -172,4 +172,46 @@
     border-radius: 4px;
     margin-bottom: 40px;
 }
+  .btn-buy:hover {
+    margin-top:40px;
+    width: 400px;
+    border: none;
+    background-color:#feb180;
+    height: 56px;
+    display: block;
+    font-size: 20px;
+    font-weight:700;
+    color:white;
+    padding : 0;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+  .btn-basket {
+    margin-top:40px;
+    width: 400px;
+    border: none;
+    background-color:black;
+    height: 56px;
+    display: block;
+    font-size: 16px;
+    color:white;
+    padding : 0;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
 
+  .btn-basket:hover {
+    margin-top:40px;
+    width: 400px;
+    border: none;
+    font-weight:700;
+    background-color:white;
+    border:3px soild black;
+    height: 56px;
+    display: block;
+    font-size: 20px;
+    color:black;
+    padding : 0;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
