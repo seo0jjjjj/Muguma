@@ -52,7 +52,7 @@ else {
 
 			<li class="fl"><a class="white_font" href=""><i
 					class="fa-solid fa-bag-shopping icon"></i></a></li>
-			<li class="fl"><a class="white_font" href=""><i
+			<li class="fl"><a class="white_font" href="../profile/myHome.jsp"><i
 					class="fa-solid fa-user icon"></i></a></li>
 		</ul>
 
@@ -65,7 +65,7 @@ else {
 			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "로그인" %></a></li>
 			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "회원가입" %></a></li>
 			<li class="fl"><a href="../border/borderForm.jsp">게시판</a></li>
-			<li class="fl"><a href="../profile/myHome.jsp">고객센터</a></li>
+			<li class="fl"><a href="#">고객센터</a></li>
 		</ul>
 	</div>
 

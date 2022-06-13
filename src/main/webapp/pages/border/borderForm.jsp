@@ -59,9 +59,9 @@ else {
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
-			<li class="fl"><a class="white_font" href=""><i
+			<li class="fl"><a class="white_font" href="#"><i
 					class="fa-solid fa-bag-shopping icon"></i></a></li>
-			<li class="fl"><a class="white_font" href=""><i
+			<li class="fl"><a class="white_font" href="../profile/myHome.jsp"><i
 					class="fa-solid fa-user icon"></i></a></li>
 		</ul>
 
@@ -73,7 +73,7 @@ else {
 			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "로그아웃" : "" %></a></li>
 			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "로그인" %></a></li>
 			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "회원가입" %></a></li>
-			<li class="fl"><a href="">고객센터</a></li>
+			<li class="fl"><a href="#">고객센터</a></li>
 		</ul>
 	</div>
 

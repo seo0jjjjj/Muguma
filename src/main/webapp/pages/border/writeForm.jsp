@@ -53,17 +53,15 @@ else {
 
 </head>
 <body>
-
-
 	<div id="navbar">
 		<ul id="one">
 			<li id="logo"><a class="white_font" href="../main/main.jsp"><i
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
-			<li class="fl"><a class="white_font" href=""><i
+			<li class="fl"><a class="white_font" href="#"><i
 					class="fa-solid fa-bag-shopping icon"></i></a></li>
-			<li class="fl"><a class="white_font" href=""><i
+			<li class="fl"><a class="white_font" href="../profile/myHome.jsp"><i
 					class="fa-solid fa-user icon"></i></a></li>
 		</ul>
 
@@ -78,8 +76,6 @@ else {
 			<li class="fl"><a href="">고객센터</a></li>
 		</ul>
 	</div>
-
-
 
 <!-- NAB바 아래부분 -->
 <center>
