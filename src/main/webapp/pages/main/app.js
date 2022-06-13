@@ -9,21 +9,20 @@ class App {
 		// 화면에 보여줄 이미지 숫자
 		this.bufferSize = 7;
 		this.img_path = [ //이미지를 담는배열
-			'./../../images/001.jpg',
-			'./../../images/002.jpg',
-			'./../../images/003.jpg',
-			'./../../images/004.jpg',
-			'./../../images/005.jpg',
-			'./../../images/006.jpg',
-			'./../../images/007.jpg',
-			'./../../images/008.jpg',
-			'./../../images/009.jpg',
-			'./../../images/010.jpg',
-			'./../../images/011.jpg',
-			'./../../images/012.jpg',
-			//'./../../images/013.jpg',
-			'./../../images/014.jpg',
-			'./../../images/015.jpg',
+			'./../../images/1.jpg',
+			'./../../images/2.jpg',
+			'./../../images/3.jpg',
+			'./../../images/4.jpg',
+			'./../../images/5.jpg',
+			'./../../images/6.jpg',
+			'./../../images/7.jpg',
+			'./../../images/8.jpg',
+			'./../../images/9.jpg',
+			'./../../images/10.jpg',
+			'./../../images/11.jpg',
+			'./../../images/12.jpg',
+			'./../../images/13.jpg',
+			'./../../images/14.jpg',
 
 		]
 
@@ -124,7 +123,7 @@ class App {
 		}
 		if(selectedBox!=""){
 		console.log("클릭한 그림 id"+selectedBox.id);
-		location.href="./../productPage/productForm.jsp?productNum=" + selectedBox.id;
+		location.href="./../productPage/productInfo.jsp?pid=" + selectedBox.id;
 
 		}
 		

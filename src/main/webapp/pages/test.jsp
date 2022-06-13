@@ -1,4 +1,5 @@
 
+<%@page import="dao.ProductDAO"%>
 <%@page import="mail.HashCreater"%>
 <%@page import="mail.MailSender"%>
 <%@page import="dao.UserDAO"%>
@@ -17,10 +18,10 @@
 	<%-- 
 	<%=	UserDAO.getInstance().findUid("seo0jjjjj@gmail.com","sample1234")%>
 	--%>
-
-
-			<button id="security_button" onsubmit="jiral()">확인하기</button>
-
+	<%=
+	
+		ProductDAO.getInstance().last_pid()
+	%>
 
 	<script>
 	function jiral() {
