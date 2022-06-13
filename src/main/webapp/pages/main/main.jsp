@@ -50,7 +50,7 @@ else {
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
-			<li class="fl"><a class="white_font" href=""><i
+			<li class="fl"><a class="white_font" href="../basket/basket_show.jsp"><i
 					class="fa-solid fa-bag-shopping icon"></i></a></li>
 			<li class="fl"><a class="white_font" href="../profile/myHome.jsp"><i
 					class="fa-solid fa-user icon"></i></a></li>

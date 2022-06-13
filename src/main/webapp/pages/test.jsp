@@ -18,9 +18,13 @@
 	<%-- 
 	<%=	UserDAO.getInstance().findUid("seo0jjjjj@gmail.com","sample1234")%>
 	--%>
-	<%=
+	<%
+		String str = null;
+	if(str==null)
+	{
+		out.println("널 은 따옴표로 dks도된다잉!");
+	}
 	
-		ProductDAO.getInstance().last_pid()
 	%>
 
 	<script>

@@ -116,8 +116,8 @@ else {
 	</p>
 
 	<hr> <!-- 위간격 24 hr 14폰트-->
-	<button onclick="location.href = './writeForm.jsp';" class="btn-buy">구매하기</button>
-	<button onclick="location.href = './writeForm.jsp';" class="btn-basket">장바구니에 담기</button>
+	<button onclick="location.href = './../basket/basket_add.jsp?pid=<%=pid %>';" class="btn-buy">구매하기</button>
+	<button onclick="location.href = './../basket/basket_add.jsp?pid=<%=pid %>';" class="btn-basket">장바구니에 담기</button>
 	
 	</div>
 		

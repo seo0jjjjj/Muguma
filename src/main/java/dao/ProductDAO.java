@@ -161,18 +161,21 @@ public class ProductDAO {
 	public ArrayList<ProductDTO> getDBList() {
 		connect();
 		ArrayList<ProductDTO> datas = new ArrayList<>();
-		String sql = "select * from user order by uid desc";
-		ProductDTO product = new ProductDTO();
+		String sql = "select * from product order by pid";
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
+				ProductDTO product = new ProductDTO();
 				product.setPid(rs.getInt("pid"));
 				product.setProductName(rs.getString("productName"));
 				product.setProductCategory(rs.getString("productCategory"));
 				product.setPrice(rs.getInt("price"));
 				product.setProductDescript(rs.getString("productDescript"));
+				datas.add(product);
+			
 			}
 			rs.close();
 		}
@@ -182,6 +185,7 @@ public class ProductDAO {
 		} finally {
 			disconnect();
 		}
+
 		return datas;
 
 	}

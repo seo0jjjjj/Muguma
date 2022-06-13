@@ -220,7 +220,7 @@ public class UserDAO {
 	public ArrayList<UserDTO> getDBList() {
 		connect();
 		ArrayList<UserDTO> datas = new ArrayList<>();
-		String sql = "select * from user order by uid desc";
+		String sql = "select * from user order by uid";
 
 		try {
 			pstmt = conn.prepareStatement(sql);
