@@ -82,7 +82,7 @@ public class BorderDAO {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1;
+		return 1;
 	}
 	
 	///글 쓰기 
@@ -122,7 +122,7 @@ public class BorderDAO {
 				border.setTitle(rs.getString("title"));
 				border.setUserID(rs.getString("userID"));
 				border.setContent(rs.getString("content"));
-				//border.setDate(rs.getString("data").toString());
+				border.setDate(rs.getString("date"));
 				datas.add(border);
 			}
 			rs.close();

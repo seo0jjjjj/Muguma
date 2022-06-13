@@ -2,6 +2,7 @@
 <%@page import="dao.BorderDAO" %>
 <%@page import="dto.BorderDTO" %>
 <%@page import="dto.UserDTO" %>
+<%@page import="date.DateManager" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -101,7 +102,7 @@ else {
 					<td><%=list.get(i).getBid() %></td>
 					<td><%=list.get(i).getTitle()%></td>
 					<td><%=list.get(i).getUserID() %></td>
-					<td><%=list.get(i).getDate()%></td>
+					<td><%=DateManager.getDate()%></td>
 				</tr>
 			<%
 					}

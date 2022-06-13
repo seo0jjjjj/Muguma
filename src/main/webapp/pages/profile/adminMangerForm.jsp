@@ -13,6 +13,13 @@
 	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //로그인 정보를 담는 세션 객체
 	boolean isAuthority=false; // 권한페이지 출력여부 
 	
+	if(userdto==null){
+		out.println("<script>");
+	    out.println("alert('잘못된 접근입니다.');");
+	    out.println("location.href = './../main/main.jsp';");;
+	    out.println("</script>");
+	}
+	
 	if(userdto.getAuthority().equals("admin")){
 		isAuthority=true;
 	}else {
