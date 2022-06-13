@@ -37,7 +37,7 @@ else {
 
 	<script src="https://kit.fontawesome.com/68a70dfda4.js"
 	crossorigin="anonymous"></script>
-	<link href="productInfo_syle.css" rel="stylesheet">
+	<link href="productInfo_style.css" rel="stylesheet">
 	
 
 
