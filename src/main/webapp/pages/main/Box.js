@@ -8,7 +8,7 @@ export class Box{ // export? APP에서 imprt하려고
         this.x = x; 
         this.y= y;  
         this.src= src;  
-        this.speed= 1+Math.random()*2;
+        this.speed= 1+Math.random()*5;
         this.id= id;  
         this.canDraw = false;
 
@@ -27,7 +27,7 @@ export class Box{ // export? APP에서 imprt하려고
       //  ctx.save();
         if(this.canDraw){
 	
-        this.x= this.x-this.speed*2 ;	
+        this.x= this.x-this.speed*0.5 ;	
     
         ctx.font = 'bold 32px sans-serif';
         ctx.fillStyle = '#111';
@@ -53,7 +53,7 @@ export class Box{ // export? APP에서 imprt하려고
         
         //그림그리기
         ctx.drawImage(this.img, this.x, this.y,this.img_width,this.img_height); // 이미지
-        ctx.fillText(this.id,this.x+(this.img_width/2),this.y+30); // 같이 다니는 설명
+        //ctx.fillText(this.id,this.x+(this.img_width/2),this.y+30); // 같이 다니는 설명
         
 
        
