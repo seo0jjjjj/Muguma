@@ -23,7 +23,7 @@
 	<div class=container>
 		<div class="side">
 			<div class="side_logo">
-				<h1>MUGEMA</h1>
+				<a href="../main/main.jsp" style="color: inherit;"><h1>MUGEMA</h1></a>
 			</div>
 			<div class="side_profile">
 		</div>
