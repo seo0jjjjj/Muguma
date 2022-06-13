@@ -64,6 +64,7 @@ else {
 			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "로그아웃" : "" %></a></li>
 			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "로그인" %></a></li>
 			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "회원가입" %></a></li>
+			<li class="fl"><a href="../border/borderForm.jsp">게시판</a></li>
 			<li class="fl"><a href="">고객센터</a></li>
 		</ul>
 	</div>

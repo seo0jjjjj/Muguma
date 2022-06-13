@@ -1,0 +1,122 @@
+* {
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        background-color: #E0E0E0;
+        
+}
+
+ul{
+    padding: 0;
+}
+.icon{
+    font-size: 20px;
+    display: block;
+}
+
+
+#navbar{
+    padding: 20px 0 0;
+    background-color: #feb180;
+    
+}
+#one{
+    padding: 0 90px;
+    height: 50px;
+    display: block;
+    line-height: 30px;
+    vertical-align: middle;
+    
+}
+
+#one li{
+    display: inline-block;
+} 
+.white_font{
+   color:white;
+}
+#logo{
+    font-size: 28px;
+    color: white;
+    margin-right: 40px;
+    font-weight: 600;
+
+}
+#search{
+    display: inline-block;
+    line-height: 32px;
+    height: 30px;
+    width: 195px;
+    vertical-align: middle;
+}
+
+
+#two{
+background-color: #f1f1f5;
+font-size: 16px;
+color:black;
+padding: 0 90px;
+display: block;
+height: 0px;
+height: 40px;
+text-align: center;
+line-height: 40px;
+
+vertical-align: middle;
+}
+
+#two li{
+    margin-top: 0;
+    text-align: right;
+    
+    display: inline-block;
+    
+}
+.fl_l{
+    border-radius: 4px;
+    float: left;
+    margin-right: 20px;
+}
+#info{
+    float: left;
+    margin-right: 40px;
+}
+.fl{
+    float:right;
+    margin-top:10px;
+    margin-left: 20px;
+}
+
+.btn {
+    margin-top:40px;
+    width: 400px;
+    border: none;
+    background-color:#feb180;
+    height: 56px;
+    display: block;
+    font-size: 16px;
+    color:white;
+    padding : 0;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+

@@ -1,51 +1,31 @@
 @charset "EUC-KR";
 
-    
-.a{
-	text-decoration: none;
-    color: black; 
-}   
-
-.navbar{
-	padding: 20px 0 0;
-    background-color: black;	
-}
-.one{
-        padding: 0 90px;
-        height: 50px;
-        display: block;
-        line-height: 30px;
-        vertical-align: middle;
-}
-
-.one li{
-    display: inline-block;
-} 
-
+ 
 .white_font{
    color:white;
 }
     
-.logo{
-	font-size: 32px;
-    color: white;
-    margin-right: 40px;
-    font-weight: 600;
-}
+
 
     
 
 .border {
-	width:100%;
-	margin-top:10%;
-	margin-left:15%;
-	margin-right:15%;
+	height: fit-content;
+
+	font-size: 20px;
+	padding-top: 10px;
+	margin: 0 110px;
 	text-align: center;
+	background-color: white;
+	
 }
                                    
 
 .table {
-	width:70%;
+	min-height: 400px;
+	min-width: 400px;
+
+	display: inline-block;
 	text-align:center;
 	border-color: #767676;
 	border-top: 1px solid #767676; 
@@ -61,3 +41,9 @@
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #dddddd;
 }
+
+center {
+
+	padding-bottom: 10px;
+}
+

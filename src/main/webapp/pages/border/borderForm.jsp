@@ -4,19 +4,85 @@
 <%@page import="dto.UserDTO" %>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!--css파일 --><link href="border_style.css" rel="stylesheet">
+
+
+<%
+//로그인 정보 nabbar 처리부분
+UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //로그인 정보를 담는 세션 객체
+boolean isLogin = false; // 로그인 상태 여부
+String userName = "";
+//로그인상태가 아닐 경우
+if (userdto == null) {
+	//로그인,회원가입 활성화
+	isLogin = false;
+}
+//로그인상태일 경우
+else {
+	//로그인,화원가입 비활성화
+	isLogin = true;
+	userName = userdto.getUserName();
+}
+
+
+%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+
+<title>무그마 스토어 | 게시판 조회</title>
+<link rel="stylesheet" href="main_style.css">	
+<!--노토산 글씨체-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!--노토산 글씨체-->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--노토산 글씨체-->
+<link
+	href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
+	rel="stylesheet">
+
+	<script src="https://kit.fontawesome.com/68a70dfda4.js"
+	crossorigin="anonymous"></script>
+	<link href="border_style.css" rel="stylesheet">
+<link href="basic_page_style.css" rel="stylesheet">
+
+
+
 </head>
 <body>
-<%
-	
-%>
+
+
+	<div id="navbar">
+		<ul id="one">
+			<li id="logo"><a class="white_font" href=""><i
+					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
+
+
+			<li class="fl"><a class="white_font" href=""><i
+					class="fa-solid fa-bag-shopping icon"></i></a></li>
+			<li class="fl"><a class="white_font" href=""><i
+					class="fa-solid fa-user icon"></i></a></li>
+		</ul>
+
+		<ul id="two">
+			<%= isLogin ? " "+userName+"님 환영합니다." : "로그인하세요." %>
+			</a></li>
+
+
+			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "로그아웃" : "" %></a></li>
+			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "로그인" %></a></li>
+			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "회원가입" %></a></li>
+			<li class="fl"><a href="">고객센터</a></li>
+		</ul>
+	</div>
+
+
+
+<!-- NAB바 아래부분 -->
+
 <div class="border">
+
 	<div class="row">
 		<table class="table">
 			<tr>
@@ -37,12 +103,14 @@
 					<td><%=list.get(i).getUserID() %></td>
 					<td><%=list.get(i).getDate()%></td>
 				</tr>
-				<%
+			<%
 					}
 				%>
 			</tbody>
 		</table>
-		<a href="writeForm.jsp" class="btn btn-write">글쓰기</a>
+		<center>
+		<button onclick="location.href = './writeForm.jsp';" class="btn">글쓰러 가기</button>
+	</center>
 	</div>
 </div>
 

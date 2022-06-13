@@ -1,14 +1,10 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>무그마 스토어</title>
-<link rel="stylesheet" href="productForm_syle.css">	
 
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-
+<title>무그마 스토어 | 게시판 조회</title>
+<link rel="stylesheet" href="main_style.css">	
 <!--노토산 글씨체-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <!--노토산 글씨체-->
@@ -18,13 +14,19 @@
 	href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
 	rel="stylesheet">
 
-<script src="https://kit.fontawesome.com/68a70dfda4.js"
+	<script src="https://kit.fontawesome.com/68a70dfda4.js"
 	crossorigin="anonymous"></script>
+	<link href="productInfo_style.css" rel="stylesheet">
+
+
+
 </head>
 <body>
+
+
 	<div id="navbar">
 		<ul id="one">
-			<li id="logo"><a class="white_font" href="./../main/main.jsp"><i
+			<li id="logo"><a class="white_font" href=""><i
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
@@ -35,17 +37,17 @@
 		</ul>
 
 		<ul id="two">
-			asdfr
+			<%= isLogin ? " "+userName+"님 환영합니다." : "로그인하세요." %>
 			</a></li>
 
 
-			<li class="fl"><a href="../login/logout.jsp">로그아웃</a></li>
-			<li class="fl"><a href="../login/loginForm.html">로그인</a></li>
-			<li class="fl"><a href="../register/registerForm.html">회원가입</a></li>
+			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "로그아웃" : "" %></a></li>
+			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "로그인" %></a></li>
+			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "회원가입" %></a></li>
 			<li class="fl"><a href="">고객센터</a></li>
 		</ul>
 	</div>
 
-</body>
-<script type="module" src="app.js"></script>
-</html>
+
+
+<!-- NAB바 아래부분 -->
