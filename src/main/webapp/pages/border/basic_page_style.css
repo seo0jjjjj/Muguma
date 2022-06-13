@@ -106,6 +106,45 @@ vertical-align: middle;
     margin-left: 20px;
 }
 
+.white_font{
+   color:white;
+}
+    
+
+
+    
+
+.border {
+	height: fit-content;
+	font-size: 20px;
+	padding-top: 10px;
+	margin: 0 110px;
+	text-align: center;
+	background-color: white;
+}
+                                   
+
+.table {
+	min-height: 500px;
+	min-width: 500px;
+	display: inline-block;
+	text-align:center;
+	border-color: #767676;
+	border-top: 1px solid #767676; 
+	border-bottom: 0px solid #767676;
+	}
+
+.table th{
+	min-width: 150px;
+	background-color: #eeeeee; 
+}
+
+.table td {
+	border-bottom: 1px solid #dddddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #dddddd;
+}
+
 .btn {
     margin-top:40px;
     width: 400px;
@@ -119,4 +158,5 @@ vertical-align: middle;
     border-radius: 4px;
     margin-bottom: 40px;
 }
+
 

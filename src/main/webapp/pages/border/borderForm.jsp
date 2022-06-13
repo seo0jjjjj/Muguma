@@ -2,23 +2,23 @@
 <%@page import="dao.BorderDAO" %>
 <%@page import="dto.BorderDTO" %>
 <%@page import="dto.UserDTO" %>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 
 <%
-//·Î±×ÀÎ Á¤º¸ nabbar Ã³¸®ºÎºÐ
-UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //·Î±×ÀÎ Á¤º¸¸¦ ´ã´Â ¼¼¼Ç °´Ã¼
-boolean isLogin = false; // ·Î±×ÀÎ »óÅÂ ¿©ºÎ
+//ë¡œê·¸ì¸ ì •ë³´ nabbar ì²˜ë¦¬ë¶€ë¶„
+UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //ë¡œê·¸ì¸ ì •ë³´ë¥¼ ë‹´ëŠ” ì„¸ì…˜ ê°ì²´
+boolean isLogin = false; // ë¡œê·¸ì¸ ìƒíƒœ ì—¬ë¶€
 String userName = "";
-//·Î±×ÀÎ»óÅÂ°¡ ¾Æ´Ò °æ¿ì
+//ë¡œê·¸ì¸ìƒíƒœê°€ ì•„ë‹ ê²½ìš°
 if (userdto == null) {
-	//·Î±×ÀÎ,È¸¿ø°¡ÀÔ È°¼ºÈ­
+	//ë¡œê·¸ì¸,íšŒì›ê°€ìž… í™œì„±í™”
 	isLogin = false;
 }
-//·Î±×ÀÎ»óÅÂÀÏ °æ¿ì
+//ë¡œê·¸ì¸ìƒíƒœì¼ ê²½ìš°
 else {
-	//·Î±×ÀÎ,È­¿ø°¡ÀÔ ºñÈ°¼ºÈ­
+	//ë¡œê·¸ì¸,í™”ì›ê°€ìž… ë¹„í™œì„±í™”
 	isLogin = true;
 	userName = userdto.getUserName();
 }
@@ -31,13 +31,13 @@ else {
 <head>
 <meta charset="UTF-8">
 
-<title>¹«±×¸¶ ½ºÅä¾î | °Ô½ÃÆÇ Á¶È¸</title>
+<title>ë¬´ê·¸ë§ˆ ìŠ¤í† ì–´ | ê²Œì‹œíŒ ì¡°íšŒ</title>
 <link rel="stylesheet" href="main_style.css">	
-<!--³ëÅä»ê ±Û¾¾Ã¼-->
+<!--ë…¸í† ì‚° ê¸€ì”¨ì²´-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<!--³ëÅä»ê ±Û¾¾Ã¼-->
+<!--ë…¸í† ì‚° ê¸€ì”¨ì²´-->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--³ëÅä»ê ±Û¾¾Ã¼-->
+<!--ë…¸í† ì‚° ê¸€ì”¨ì²´-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
 	rel="stylesheet">
@@ -55,7 +55,7 @@ else {
 
 	<div id="navbar">
 		<ul id="one">
-			<li id="logo"><a class="white_font" href=""><i
+			<li id="logo"><a class="white_font" href="../main/main.jsp"><i
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
@@ -66,30 +66,30 @@ else {
 		</ul>
 
 		<ul id="two">
-			<%= isLogin ? " "+userName+"´Ô È¯¿µÇÕ´Ï´Ù." : "·Î±×ÀÎÇÏ¼¼¿ä." %>
+			<%= isLogin ? " "+userName+"ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤." : "ë¡œê·¸ì¸í•˜ì„¸ìš”." %>
 			</a></li>
 
 
-			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "·Î±×¾Æ¿ô" : "" %></a></li>
-			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "·Î±×ÀÎ" %></a></li>
-			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "È¸¿ø°¡ÀÔ" %></a></li>
-			<li class="fl"><a href="">°í°´¼¾ÅÍ</a></li>
+			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "ë¡œê·¸ì•„ì›ƒ" : "" %></a></li>
+			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "ë¡œê·¸ì¸" %></a></li>
+			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "íšŒì›ê°€ìž…" %></a></li>
+			<li class="fl"><a href="">ê³ ê°ì„¼í„°</a></li>
 		</ul>
 	</div>
 
 
 
-<!-- NAB¹Ù ¾Æ·¡ºÎºÐ -->
+<!-- NABë°” ì•„ëž˜ë¶€ë¶„ -->
 
 <div class="border">
 
 	<div class="row">
 		<table class="table">
 			<tr>
-				<th>¹øÈ£</th>
-				<th>Á¦¸ñ</th>
-				<th>ÀÛ¼ºÀÚ</th>
-				<th>ÀÛ¼ºÀÏ</th>
+				<th>ë²ˆí˜¸</th>
+				<th>ì œëª©</th>
+				<th>ìž‘ì„±ìž</th>
+				<th>ìž‘ì„±ì¼</th>
 			</tr>
 			<tbody>
 				<%
@@ -109,7 +109,7 @@ else {
 			</tbody>
 		</table>
 		<center>
-		<button onclick="location.href = './writeForm.jsp';" class="btn">±Û¾²·¯ °¡±â</button>
+		<button onclick="location.href = './writeForm.jsp';" class="btn">ê¸€ì“°ëŸ¬ ê°€ê¸°</button>
 	</center>
 	</div>
 </div>

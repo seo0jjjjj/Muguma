@@ -2,25 +2,25 @@
 <%@page import="dao.BorderDAO" %>
 <%@page import="dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="borderInfo" class="dto.BorderDTO"></jsp:useBean>
 <jsp:setProperty property="title" name="borderInfo"/>
 <jsp:setProperty property="content" name="borderInfo"/>
 
 <%
-//·Î±×ÀÎ Á¤º¸ nabbar Ã³¸®ºÎºÐ
-UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //·Î±×ÀÎ Á¤º¸¸¦ ´ã´Â ¼¼¼Ç °´Ã¼
-boolean isLogin = false; // ·Î±×ÀÎ »óÅÂ ¿©ºÎ
+//ë¡œê·¸ì¸ ì •ë³´ nabbar ì²˜ë¦¬ë¶€ë¶„
+UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //ë¡œê·¸ì¸ ì •ë³´ë¥¼ ë‹´ëŠ” ì„¸ì…˜ ê°ì²´
+boolean isLogin = false; // ë¡œê·¸ì¸ ìƒíƒœ ì—¬ë¶€
 String userName = "";
-//·Î±×ÀÎ»óÅÂ°¡ ¾Æ´Ò °æ¿ì
+//ë¡œê·¸ì¸ìƒíƒœê°€ ì•„ë‹ ê²½ìš°
 if (userdto == null) {
-	//·Î±×ÀÎ,È¸¿ø°¡ÀÔ È°¼ºÈ­
+	//ë¡œê·¸ì¸,íšŒì›ê°€ìž… í™œì„±í™”
 	isLogin = false;
 }
-//·Î±×ÀÎ»óÅÂÀÏ °æ¿ì
+//ë¡œê·¸ì¸ìƒíƒœì¼ ê²½ìš°
 else {
-	//·Î±×ÀÎ,È­¿ø°¡ÀÔ ºñÈ°¼ºÈ­
+	//ë¡œê·¸ì¸,í™”ì›ê°€ìž… ë¹„í™œì„±í™”
 	isLogin = true;
 	userName = userdto.getUserName();
 }
@@ -33,13 +33,13 @@ else {
 <head>
 <meta charset="UTF-8">
 
-<title>¹«±×¸¶ ½ºÅä¾î | °Ô½ÃÆÇ ±Û¾²±â</title>
+<title>ë¬´ê·¸ë§ˆ ìŠ¤í† ì–´ | ê²Œì‹œíŒ ê¸€ì“°ê¸°</title>
 <link rel="stylesheet" href="main_style.css">	
-<!--³ëÅä»ê ±Û¾¾Ã¼-->
+<!--ë…¸í† ì‚° ê¸€ì”¨ì²´-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<!--³ëÅä»ê ±Û¾¾Ã¼-->
+<!--ë…¸í† ì‚° ê¸€ì”¨ì²´-->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--³ëÅä»ê ±Û¾¾Ã¼-->
+<!--ë…¸í† ì‚° ê¸€ì”¨ì²´-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
 	rel="stylesheet">
@@ -57,7 +57,7 @@ else {
 
 	<div id="navbar">
 		<ul id="one">
-			<li id="logo"><a class="white_font" href=""><i
+			<li id="logo"><a class="white_font" href="../main/main.jsp"><i
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
@@ -68,25 +68,25 @@ else {
 		</ul>
 
 		<ul id="two">
-			<%= isLogin ? " "+userName+"´Ô È¯¿µÇÕ´Ï´Ù." : "·Î±×ÀÎÇÏ¼¼¿ä." %>
+			<%= isLogin ? " "+userName+"ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤." : "ë¡œê·¸ì¸í•˜ì„¸ìš”." %>
 			</a></li>
 
 
-			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "·Î±×¾Æ¿ô" : "" %></a></li>
-			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "·Î±×ÀÎ" %></a></li>
-			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "È¸¿ø°¡ÀÔ" %></a></li>
-			<li class="fl"><a href="">°í°´¼¾ÅÍ</a></li>
+			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "ë¡œê·¸ì•„ì›ƒ" : "" %></a></li>
+			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "ë¡œê·¸ì¸" %></a></li>
+			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "íšŒì›ê°€ìž…" %></a></li>
+			<li class="fl"><a href="">ê³ ê°ì„¼í„°</a></li>
 		</ul>
 	</div>
 
 
 
-<!-- NAB¹Ù ¾Æ·¡ºÎºÐ -->
+<!-- NABë°” ì•„ëž˜ë¶€ë¶„ -->
 <center>
 
 
 </div>
-	<!-- ±Û¾²±â ¾ç½Ä º¸¿©Áö´Â ¹®-->
+	<!-- ê¸€ì“°ê¸° ì–‘ì‹ ë³´ì—¬ì§€ëŠ” ë¬¸-->
 	<div class="border">	
 		<div class="row">
 		<div class="table">
@@ -94,22 +94,22 @@ else {
 				<table style="text-align: center; border: 1px solid #dddddd">
 					<thead>
 						<tr>
-							<th colspan="2" style="background-color: #eeeeee; text-align: center;">°Ô½ÃÆÇ ±Û¾²±â</th>
+							<th colspan="2" style="background-color: #eeeeee; text-align: center;">ê²Œì‹œíŒ ê¸€ì“°ê¸°</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-						<td><input type="text" class=" " placeholder="±Û Á¦¸ñ" name="title" maxlength="50"> 
+						<td><input type="text" class=" " placeholder="ê¸€ ì œëª©" name="title" maxlength="50"> 
 						</td>
 						</tr>
 						<tr>
-						<td><textarea placeholder="±Û ³»¿ë" name="content" maxlength="1024" style="height:350px; width: 600px"></textarea>
+						<td><textarea placeholder="ê¸€ ë‚´ìš©" name="content" maxlength="1024" style="height:350px; width: 600px"></textarea>
 						</td>
 						</tr>
 					</tbody>
 				</table>
 				<center>
-					<button class="btn">±Û ¾²±â</button>
+					<button class="btn">ê¸€ ì“°ê¸°</button>
 				</center>
 
 				</form>

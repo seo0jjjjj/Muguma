@@ -1,37 +1,48 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="java.io.PrintWriter" %>
+<%@page import="dto.UserDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <link href="profile_style.css" rel="stylesheet">
 
+<%
+	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //로그인 정보를 담는 세션 객체
+	boolean isAuthority=false; // 권한페이지 출력여부 
+	
+	if(userdto.getAuthority().equals("admin")){
+		isAuthority=true;
+	}else {
+		isAuthority=false;
+	}
+%>
+
 </head>
 <body>
-<%
-boolean isO = false;
-%>
 	<div class=container>
 		<div class="side">
 			<div class="side_logo">
-				<a href="main.jsp"><img class="logo" src="#"></a>
 				<h1>MUGEMA</h1>
 			</div>
 			<div class="side_profile">
 		</div>
 			<div class="side_state">
 				<ul>
-					<li> <a href="myHome.jsp">��������</a></li>
-					<li> <a><h3>���ȼ���</h3></a></li>
-					<li> <a href="adminMangerForm.jsp"><%= isO ? "������ ������" : "" %></a>
+					<li> <a href="myHome.jsp">개인정보</a></li>
+					<li> <a><h3>보안설정</h3></a></li>
+					<li> <a href="adminMangerForm.jsp"><%= isAuthority ? "관리자 페이지" : "" %></a>
+					
 				</ul>
 			</div>
 		</div>
 		<div class="main">
-			<!-- ù��° �ڽ� -->		
+			<!-- 첫번째 박스 -->		
 			<div class="main_item">
-				<h3>��й�ȣ ����</h3>
-				<p>��й�ȣ</p>
+				<h3>비밀번호 변경</h3>
+				<p></p>
 			</div>
+			
 			
 			
 		</div>

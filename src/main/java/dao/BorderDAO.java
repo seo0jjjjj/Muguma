@@ -122,7 +122,7 @@ public class BorderDAO {
 				border.setTitle(rs.getString("title"));
 				border.setUserID(rs.getString("userID"));
 				border.setContent(rs.getString("content"));
-				//border.setDate(rs.getString("data"));
+				//border.setDate(rs.getString("data").toString());
 				datas.add(border);
 			}
 			rs.close();

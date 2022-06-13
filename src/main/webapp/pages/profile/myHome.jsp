@@ -1,3 +1,5 @@
+<%@page import="java.io.PrintWriter" %>
+<%@page import="dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -5,15 +7,22 @@
 <head>
 <link href="profile_style.css" rel="stylesheet">
 
+<%
+	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //로그인 정보를 담는 세션 객체
+	boolean isAuthority=false; // 권한페이지 출력여부 
+	
+	if(userdto.getAuthority().equals("admin")){
+		isAuthority=true;
+	}else {
+		isAuthority=false;
+	}
+%>
+
 </head>
 <body>
-<%
-boolean isO = false;
-%>
 	<div class=container>
 		<div class="side">
 			<div class="side_logo">
-				<a href="main.jsp"><img class="logo" src="#"></a>
 				<h1>MUGEMA</h1>
 			</div>
 			<div class="side_profile">
@@ -22,7 +31,8 @@ boolean isO = false;
 				<ul>
 					<li> <a><h3>개인정보</h3></a></li>
 					<li> <a href="securityForm.jsp">보안설정</a></li>
-					<li> <a href="adminMangerForm.jsp"><%= isO ? "관리자 페이지" : "" %></a>
+					<li> <a href="adminMangerForm.jsp"><%= isAuthority ? "관리자 페이지" : "" %></a>
+					
 				</ul>
 			</div>
 		</div>
@@ -37,11 +47,7 @@ boolean isO = false;
 				<h3>이메일 수정</h3>
 				<p>비밀번호</p>
 			</div>
-			<!-- 세번째 박스 -->
-			<div class="main_item">
-				<h3>배송지 관리</h3>
-				<p>현재 배송지</p>
-			</div>
+			
 			
 		</div>
 	</div>
