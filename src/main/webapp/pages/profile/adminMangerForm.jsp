@@ -38,42 +38,42 @@
 				</ul>
 			</div>
 		</div>
-		<%
-			UserDAO userDAO=UserDAO.getInstance();
-			ArrayList<UserDTO> list=userDAO.getDBList();
-			for(int i=0;i<list.size();i++){
-		%>
 		<div class="main">
-			<!-- 첫번째 박스 -->		
-			<div class="main_item">
+				<table class="userTable" style="width: 100%;border: 1px solid #444444;border-collapse: collapse;">
 				<h3>유저 데이터 출력</h3>
-				<table class="userTable">
-					<th>
-						<th>고유번호</th>
-						<th>아이디</th>
-						<th>비밀번호</th>
-						<th>이름</th>
-						<th>이메일</th>
-						<th>전화번호</th>
-						<th>성</th>
-						<th>권한</th>
-					</th>
 					<tr>
-						<td><%=list.get(i).getUid()%></td>
-						<td><%=list.get(i).getUserID() %></td>
-						<td><%=list.get(i).getUserPassword() %></td>
-						<td><%=list.get(i).getUserName() %></td>
-						<td><%=list.get(i).getUserEmail() %></td>
-						<td><%=list.get(i).getUserTel() %></td>
-						<td><%=list.get(i).getSex() %></td>
-						<td><%=list.get(i).getAuthority() %></td>
+						<th style="border: 1px solid #444444;">고유번호</th>
+						<th style="border: 1px solid #444444;">아이디</th>
+						<th style="border: 1px solid #444444;">비밀번호</th>
+						<th style="border: 1px solid #444444;">이름</th>
+						<th style="border: 1px solid #444444;">이메일</th>
+						<th style="border: 1px solid #444444;">전화번호</th>
+						<th style="border: 1px solid #444444;">성</th>
+						<th style="border: 1px solid #444444;">권한</th>
 					</tr>
+					<tbody>
+					<%
+						UserDAO userDAO=UserDAO.getInstance();
+						ArrayList<UserDTO> list=userDAO.getDBList();
+							for(int i=0;i<list.size();i++){
+					%>
+						<tr>
+							<td style="border: 1px solid #444444;"><%=list.get(i).getUid()%></td>
+							<td style="border: 1px solid #444444;"><%=list.get(i).getUserID() %></td>
+							<td style="border: 1px solid #444444;"><%=list.get(i).getUserPassword() %></td>
+							<td style="border: 1px solid #444444;"><%=list.get(i).getUserName() %></td>
+							<td style="border: 1px solid #444444;"><%=list.get(i).getUserEmail() %></td>
+							<td style="border: 1px solid #444444;"><%=list.get(i).getUserTel() %></td>
+							<td style="border: 1px solid #444444;"><%=list.get(i).getSex() %></td>
+							<td style="border: 1px solid #444444;"><%=list.get(i).getAuthority() %></td>
+						</tr>
+						<%
+							}
+						%>
+					</tbody>
 				</table>
-			</div>
 		</div>
-		<%
-			}
-		%>
+
 	</div>
 </body>
 </html>

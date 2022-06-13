@@ -39,8 +39,8 @@
 		<div class="main">
 			<!-- 첫번째 박스 -->		
 			<div class="main_item">
-				<h3>비밀번호 변경</h3>
-				<p></p>
+				<h3>비밀번호</h3>
+				<p><%=userdto.getUserPassword() %></p>
 			</div>
 			
 			

@@ -1,5 +1,6 @@
 <%@page import="java.io.PrintWriter" %>
 <%@page import="dto.UserDTO"%>
+<%@page import="dao.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -39,13 +40,13 @@
 		<div class="main">
 			<!-- 첫번째 박스 -->		
 			<div class="main_item">
-				<h3>전화번호 수정</h3>
-				<p>유저 데이터</p>
+				<h3>전화번호</h3>
+				<p><%=userdto.getUserTel()%></p>
 			</div>
 			<!-- 두번째 박스 -->
 			<div class="main_item">
-				<h3>이메일 수정</h3>
-				<p>비밀번호</p>
+				<h3>이메일</h3>
+				<p><%=userdto.getUserEmail() %></p>
 			</div>
 			
 			

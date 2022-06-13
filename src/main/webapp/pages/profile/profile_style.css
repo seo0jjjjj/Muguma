@@ -6,7 +6,6 @@
 	text-decoration: none;
 }
 
-
 .side{
 	position: fixed;
 	left: 0;
@@ -56,5 +55,5 @@ ul li:hover a{
   	background: white; 
   	margin-top: 10px; 
 	border-radius: 20px 20px 20px 20px;
-
 }
+
