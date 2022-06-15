@@ -33,6 +33,7 @@ else {
 	ProductDTO db_product = new ProductDTO(); // 검색할 DTO
 	
 	if(request.getParameter("pid")==null){//db찾기 실패
+		//메인으로 이동
 		out.println("<script>");
 		out.println("alert('[오류] 데이터베이스에서 해당 그림을 찾을 수 없습니다.');");
 		out.println("location.href = './../main/main.jsp';");
@@ -40,8 +41,9 @@ else {
 	}
 	//db에서 pid찾기 성공
 	else{
+		//pid를 가지고 db로 검색후 dto를 가져옴.
 		pid = Integer.parseInt(request.getParameter("pid"));
-		db_product = ProductDAO.getInstance().getbyUid(pid);
+		db_product = ProductDAO.getInstance().getbyPid(pid);
 	}
 %>
 <!DOCTYPE html>
@@ -107,11 +109,14 @@ else {
 		
 	<p class="brand" style="font-size:13px">제목</p><!--브랜드명> 13-->
 	<p class="title" style="font-size:34px; font-weight:700; margin-left:30px"><%=db_product.getProductName() %></p> <!--제목> 34-->
+		<p style="font-size:16px; font-weight:400; margin-left:30px">#<%=db_product.getProductCategory() %></p> <!--제목> 34-->
+	
 	<br>
 	<hr>
 	<br>
 	
 	<p style="font-size:28px"><%= Integer.toString(db_product.getPrice()) %> <!-- 가격 28폰트 미디움-->
+	
 	<span style="font-size:15px">원</span> <!-- 2픽셀> 원 15폰트-->
 	</p>
 

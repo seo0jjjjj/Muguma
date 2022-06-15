@@ -31,7 +31,6 @@ class App {
 		window.addEventListener('resize', this.resize.bind(this), false);
 		this.resize();
 		window.requestAnimationFrame(this.animate.bind(this));
-		console.log("스테이지크기는" + this.stageHeight); //화면 크기 분석
 		
 		//박스 생성
 		this.initBox(this.bufferSize);
@@ -44,7 +43,7 @@ class App {
 	initBox(bufferSize) {
 		for (let i = 0; i < bufferSize; i++) {
 			var x = Math.random() * this.stageWidth;
-			var y = Math.random() * this.stageHeight * 0.8;
+			var y = Math.random() * this.stageHeight * 0.6;
 			var src = this.img_path[i];
 			this.image_path_iterator++;
 			var id = i+1; // 그림은 1부터 시작함.
@@ -74,10 +73,10 @@ class App {
 
 		//애니메이션
 		for (let i = 0; i < this.bufferSize; i++) {
-
+			
 			// 이미지가 화면밖으로 나가면,
 			if (this.boxes[i].x < (-this.boxes[i].img_width)) {
-
+				
 
 
 				// 새로운 이미지 생성

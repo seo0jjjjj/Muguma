@@ -112,16 +112,18 @@ public class ProductDAO {
 	}
 	
 	/// 모든 상품 출력
-	public ProductDTO getbyUid(int uid) {
+	public ProductDTO getbyPid(int pid) {
 		connect();
 		ProductDTO product = new ProductDTO();
 		try {
-			sql="select * from Product";
+			sql="select * from Product where pid=?";
+			
 			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, pid);
 			rs=pstmt.executeQuery();
 			
 			if(rs.next()) {
-				product.setPid(rs.getInt("pid"));
+				product.setPid(rs.getInt("pid")); 
 				product.setProductName(rs.getString("productName"));
 				product.setProductCategory(rs.getString("productCategory"));
 				product.setPrice(rs.getInt("price"));
@@ -135,6 +137,7 @@ public class ProductDAO {
 		}
 		return product;
 	}
+	
 	public ProductDTO getAll() {
 		connect();
 		ProductDTO product = new ProductDTO();

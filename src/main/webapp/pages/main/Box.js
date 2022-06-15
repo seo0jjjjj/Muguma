@@ -6,7 +6,7 @@ export class Box{ // export? APP에서 imprt하려고
     constructor(x,y,src,id){
        
         this.x = x; 
-        this.y= y;  
+        this.y= y+100;  
         this.src= src;  
         this.speed= 1+Math.random()*5;
         this.id= id;  
