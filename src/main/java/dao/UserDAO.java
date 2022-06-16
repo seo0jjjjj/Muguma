@@ -8,15 +8,17 @@ import java.util.ArrayList;
 
 import dto.UserDTO;
 
+///사용자(User)의 db를 사용하여 조회 조작하는 클래스
 public class UserDAO {
-	Connection conn = null;
-	PreparedStatement pstmt = null;
+	Connection conn = null; //Connection 선언
+	PreparedStatement pstmt = null; //psmt 선언
 
-	private static UserDAO instance;
+	private static UserDAO instance; //싱글톤 패턴
 
 	private UserDAO() {
-	}
+	}//싱글톤 생성자
 
+	// 싱글톤 객체 초기화
 	static {
 		try {
 			instance = new UserDAO();
@@ -125,6 +127,7 @@ public class UserDAO {
 		return true;
 	}
 
+	//update 문 
 	public boolean updateDB(UserDTO userDTO) {
 		connect();
 		String sql = "update user set userID=?,userPassword=?,userName=?,userEmail=?,userTel=?,userAddress=?,Sex=?,authority=? where uid=?";
@@ -150,6 +153,8 @@ public class UserDAO {
 		}
 		return true;
 	}
+	
+	//비밀번호 변경
 	public boolean updatePW(int uid,String pw) {
 		connect();
 		String sql = "update user set userPassword=? where uid=?";
@@ -168,6 +173,7 @@ public class UserDAO {
 		}
 		return true;
 	}
+	//uid 정보삭제
 	public boolean deleted(int uid) {
 		connect();
 		String sql = "delete from user where uid=?";
@@ -216,7 +222,7 @@ public class UserDAO {
 		}
 		return userDTO;
 	}
-
+	//user테이블을 모두 가져옴.
 	public ArrayList<UserDTO> getDBList() {
 		connect();
 		ArrayList<UserDTO> datas = new ArrayList<>();
@@ -250,7 +256,8 @@ public class UserDAO {
 		return datas;
 
 	}
-
+	
+	// 로그인하는 함수
 	public int login(String id, String pw) {
 		int uid = 0;
 		connect();

@@ -1,5 +1,5 @@
 package dto;
-
+///Product 테이블의 DTO 각 항목들의 선언과 getter setter
 public class ProductDTO {
 	private int pid; // pid int default 1
 	private String productName; // productName varchar(10), 

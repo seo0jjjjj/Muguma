@@ -3,7 +3,7 @@ package date;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-//현재 날짜를 db에 맞는 형식으로 불러옴.
+///현재 날짜를 불러오는 함수를 가지는 static 클래스 (게시판에서 DATE를 입력하기 용도)
 public class DateManager {
 	private String date;
 	public DateManager() {}

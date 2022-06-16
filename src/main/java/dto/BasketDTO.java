@@ -1,5 +1,5 @@
 package dto;
-
+///Basket 테이블의 DTO 각 항목들의 선언과 getter setter
 public class BasketDTO {
 	private int uid; //uid int
 	private int pid; //pid int

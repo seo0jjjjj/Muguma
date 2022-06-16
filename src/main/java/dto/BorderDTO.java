@@ -1,5 +1,5 @@
 package dto;
-
+///Border 테이블의 DTO 각 항목들의 선언과 getter setter
 public class BorderDTO {
 	private int bid; //bid int default 1,
     private String title; //title varchar(20),

@@ -23,15 +23,18 @@ import javax.swing.border.Border;
 
 import dto.BorderDTO;
 
+///게시판(Border)의 db를 사용하여 조회 조작하는 클래스
 public class BorderDAO {
-	Connection conn = null;
-	PreparedStatement pstmt = null;
-	ResultSet rs =null;
-	String sql="";
-	
+	Connection conn = null; // Connection
+	PreparedStatement pstmt = null; // PreparedStatemnet
+	ResultSet rs = null; // Resultset
+	String sql = ""; // sql 문
+
+	// db 연결
 	public void connect() {
 		this.conn = DBCon.getInstance().getConnection();
 	}
+
 	// db 연결 해제
 	private void disconnect() {
 		System.out.println("[BorderDAO] Disconnect 진행");
@@ -54,70 +57,70 @@ public class BorderDAO {
 		}
 
 	}
-	
-	//글쓰기 날짜 
+
+	// 글쓰기 날짜
 	public String getDate() {
-		String sql="select now()";
+		String sql = "select now()";
 		try {
-			PreparedStatement pstmt=conn.prepareStatement(sql);
-			rs=pstmt.executeQuery();
-			if(rs.next()) {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
 				return rs.getString(1);
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return " ";
 	}
-	
-	//글 번호 
+
+	// 글 번호
 	public int getBid() {
-		String sql="select bid from border order by bid desc";
+		String sql = "select bid from border order by bid desc";
 		try {
-			PreparedStatement pstmt=conn.prepareStatement(sql);
-			rs=pstmt.executeQuery();
-			if(rs.next()) {
-				return rs.getInt(1)+1;
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1) + 1;
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return 1;
 	}
-	
-	///글 쓰기 
-	public int setBorder(String title,String userID,String content) {
+
+	/// 글 쓰기
+	public int setBorder(String title, String userID, String content) {
 		connect();
-		int bid=getBid();
-		String date=getDate();
+		int bid = getBid();
+		String date = getDate();
 		try {
-			sql="insert into Border values (?,?,?,?,?)";
-			pstmt=conn.prepareStatement(sql);
+			sql = "insert into Border values (?,?,?,?,?)";
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, bid);
 			pstmt.setString(2, title);
 			pstmt.setString(3, userID);
 			pstmt.setString(4, content);
 			pstmt.setString(5, date);
 			return pstmt.executeUpdate();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			disconnect();
 		}
 		return -1;
 	}
-	
-	///모든 글 출력 
+
+	/// 모든 글 출력
 	public ArrayList<BorderDTO> getBorder() {
 		connect();
-		sql="select * from Border";
-		ArrayList<BorderDTO> datas=new ArrayList<BorderDTO>();
+		sql = "select * from Border";
+		ArrayList<BorderDTO> datas = new ArrayList<BorderDTO>();
 		try {
-			pstmt=conn.prepareStatement(sql);
-			rs=pstmt.executeQuery();
-			
-			while(rs.next()) {
-				BorderDTO border=new BorderDTO();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				BorderDTO border = new BorderDTO();
 				border.setBid(rs.getInt("bid"));
 				border.setTitle(rs.getString("title"));
 				border.setUserID(rs.getString("userID"));
@@ -126,9 +129,9 @@ public class BorderDAO {
 				datas.add(border);
 			}
 			rs.close();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			disconnect();
 		}
 		return datas;

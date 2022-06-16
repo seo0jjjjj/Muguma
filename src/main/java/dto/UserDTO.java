@@ -1,5 +1,5 @@
 package dto;
-
+///User 테이블의 DTO 각 항목들의 선언과 getter setter
 public class UserDTO {
 
 	private int uid;

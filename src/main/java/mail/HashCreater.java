@@ -7,7 +7,7 @@ import java.util.Random;
 
 import org.apache.commons.codec.binary.Hex;
 
-// 
+/// 난수를 생성하는 클래스
 public class HashCreater {
 	/// MessageDigest 인스턴스 생성 및 SHA-512를 이용해 헤시코드 생성함수
 	
@@ -21,7 +21,7 @@ public class HashCreater {
 		return result;
 	}
 
-	/// 알파벳으로 된 랜덤 문자열을 생성하는 함수.
+	/// 알파벳으로 된 랜덤 문자열을 생성하는 함수. (현 프로젝트에서 사용 x)
 	public static String createRandomString() {
 		int leftLimit = 48; // numeral '0'
 		int rightLimit = 122; // letter 'z'
@@ -33,8 +33,7 @@ public class HashCreater {
 				.collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
 
 		return generatedString;
-		// [출처] https://linkeverything.github.io/java/java-random-string/
-
+	
 	}
 
 }

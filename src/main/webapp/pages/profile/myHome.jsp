@@ -1,23 +1,41 @@
-<%@page import="java.io.PrintWriter" %>
+<%@page import="java.io.PrintWriter"%>
 <%@page import="dto.UserDTO"%>
 <%@page import="dao.UserDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+
+<%
+//ë¡œê·¸ì¸ë˜ì–´ìˆëŠ”ì§€?
+UserDTO userdto = (UserDTO) session.getAttribute("userInfo");
+
+boolean isAuthority = false; // ê¶Œí•œí˜ì´ì§€ ì¶œë ¥ì—¬ë¶€ 
+if (userdto == null) {
+	out.println("<script>");
+	out.println("alert('ë³´ì•ˆì„¤ì • í˜ì´ì§€ì— ì ‘ê·¼í•˜ë ¤ë©´ ë¡œê·¸ì¸í•´ì£¼ì„¸ìš”!')");
+	out.println("location.href='./../login/loginForm.html'");
+	out.println("</script>");
+	return ;
+
+}
+//ë¡œê·¸ì¸ ë˜ì–´ìˆì„ê²½ìš°
+
+%>
+
+<%
+if (userdto.getAuthority().equals("admin")) {
+	isAuthority = true;
+} else {
+	isAuthority = false;
+}
+
+%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <link href="profile_style.css" rel="stylesheet">
-
-<%
-	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //·Î±×ÀÎ Á¤º¸¸¦ ´ã´Â ¼¼¼Ç °´Ã¼
-	boolean isAuthority=false; // ±ÇÇÑÆäÀÌÁö Ãâ·Â¿©ºÎ 
-	
-	if(userdto.getAuthority().equals("admin")){
-		isAuthority=true;
-	}else {
-		isAuthority=false;
-	}
-%>
 
 </head>
 <body>
@@ -26,33 +44,31 @@
 			<div class="side_logo">
 				<a href="../main/main.jsp" style="color: inherit;"><h1>MUGEMA</h1></a>
 			</div>
-			<div class="side_profile">
-		</div>
+			<div class="side_profile"></div>
 			<div class="side_state">
 				<ul>
-					<li> <a><h3>°³ÀÎÁ¤º¸</h3></a></li>
-					<li> <a href="securityForm.jsp">º¸¾È¼³Á¤</a></li>
-					<li> <a href="adminMangerForm.jsp"><%= isAuthority ? "°ü¸®ÀÚ ÆäÀÌÁö" : "" %></a>
-					
+					<li><a><h3>ê°œì¸ì •ë³´</h3></a></li>
+					<li><a href="securityForm.jsp">ë³´ì•ˆì„¤ì •</a></li>
+					<li><a href="adminMangerForm.jsp"><%=isAuthority ? "ê´€ë¦¬ì í˜ì´ì§€" : ""%></a>
 				</ul>
 			</div>
 		</div>
 		<div class="main">
-			<!-- Ã¹¹øÂ° ¹Ú½º -->		
+			<!-- ì²«ë²ˆì§¸ ë°•ìŠ¤ -->
 			<div class="main_item">
-				<h3>ÀüÈ­¹øÈ£</h3>
+				<h3>ì „í™”ë²ˆí˜¸</h3>
 				<p><%=userdto.getUserTel()%></p>
 			</div>
-			<!-- µÎ¹øÂ° ¹Ú½º -->
+			<!-- ë‘ë²ˆì§¸ ë°•ìŠ¤ -->
 			<div class="main_item">
-				<h3>ÀÌ¸ŞÀÏ</h3>
-				<p><%=userdto.getUserEmail() %></p>
+				<h3>ì´ë©”ì¼</h3>
+				<p><%=userdto.getUserEmail()%></p>
 			</div>
 			<div class="main_item">
-				<h3><%=isAuthority ? "»ç¿ëÀÚ ¹®ÀÇ ±Û" : "°í°´¼¾ÅÍ ¹®ÀÇ ±Û" %></h3>
+				<h3><%=isAuthority ? "ì‚¬ìš©ì ë¬¸ì˜ ê¸€" : "ê³ ê°ì„¼í„° ë¬¸ì˜ ê¸€"%></h3>
 				<p></p>
 			</div>
-			
+
 		</div>
 	</div>
 </body>

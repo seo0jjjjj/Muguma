@@ -20,7 +20,7 @@ import java.util.List;
 import dto.ProductDTO;
 import dto.UserDTO;
 
-// 상품 정보를 가지고 있는 DAO
+///상품(Product)테이블의 db를 사용하여 조회 조작하는 싱글톤클래스
 public class ProductDAO {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
@@ -137,7 +137,7 @@ public class ProductDAO {
 		}
 		return product;
 	}
-	
+	//product의 맨 윗 투플을 가져옴. +현재 프로젝트에서 사용하지않음.
 	public ProductDTO getAll() {
 		connect();
 		ProductDTO product = new ProductDTO();
@@ -160,6 +160,7 @@ public class ProductDAO {
 		}
 		return product;
 	}
+	
 	//모든 상품의 리스트 출력
 	public ArrayList<ProductDTO> getDBList() {
 		connect();
