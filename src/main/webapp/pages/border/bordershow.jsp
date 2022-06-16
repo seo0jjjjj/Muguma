@@ -112,14 +112,43 @@ if (borderDTO == null) {
 
 
 	<!-- NAB바 아래부분 -->
-
-	<div>
-	<%=borderDTO.getBid() %>
-	<%=borderDTO.getDate() %>
-	<%=borderDTO.getTitle() %>
-	<%=borderDTO.getUserID() %>
-	<%=borderDTO.getContent() %>
-
+	
+	<div class="border">
+	<center>
+	<div class="row" style="background: white;
+    						text-align: center;
+    						width:800px	"
+    						
+    						>
+		<table class="table">
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
+			</tr>
+			<tbody>
+				<tr>
+					<td><%=borderDTO.getBid() %></td>
+					<td><%=borderDTO.getTitle()%></td>
+					<td><%=borderDTO.getUserID() %></td>
+					<td><%=borderDTO.getDate()%></td>
+				</tr>
+			<%
+					
+				%>
+			</tbody>
+			<tfoot>
+		
+   <tr><td colspan=4><%=borderDTO.getContent() %></td></tr>
+			</tfoot>
+		</table>
+		<center>
+		<button onclick="location.href = './borderForm.jsp';" class="btn">뒤로가기</button>
+	</center>
 	</div>
+	</center>
+</div>
+
 </body>
 </html>

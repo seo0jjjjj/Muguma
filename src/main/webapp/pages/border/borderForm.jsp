@@ -101,7 +101,7 @@ else {
 					ArrayList<BorderDTO> list = borderDAO.getBorder();
 					for(int i=0;i<list.size();i++) {
 				%>
-				<tr onClick="location.href=<%=""+"'./bordershow.jsp?bid="+list.get(i).getBid()+";'"%>">
+				<tr onClick="location.href=<%=""+"'./bordershow.jsp?bid="+list.get(i).getBid()+"';"%>">
 					<td><%=list.get(i).getBid() %></td>
 					<td><%=list.get(i).getTitle()%></td>
 					<td><%=list.get(i).getUserID() %></td>
@@ -117,7 +117,7 @@ else {
 			</tfoot>
 		</table>
 		<center>
-		<button onclick="location.href = './writeForm.jsp'" class="btn">글쓰러 가기</button>
+		<button onclick="location.href = './writeForm.jsp';" class="btn">글쓰러 가기</button>
 	</center>
 	</div>
 </div>
