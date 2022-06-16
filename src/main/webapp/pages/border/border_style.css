@@ -1,10 +1,6 @@
+
 @charset "EUC-KR";
 
- 
-.white_font{
-   color:white;
-}
-    
 
 
     
@@ -15,32 +11,11 @@
 	font-size: 20px;
 	padding-top: 10px;
 	margin: 0 110px;
-	text-align: center;
-	background-color: white;
-	
+	border: solid 1px black;
+
 }
                                    
 
-.table {
-	min-height: 400px;
-	min-width: 400px;
-
-	display: inline-block;
-	text-align:center;
-	border-color: #767676;
-	border-top: 1px solid #767676; 
-	border-bottom: 0px solid #767676;
-	}
-
-.table th{
-	background-color: #eeeeee; 
-}
-
-.table td {
-	border-bottom: 1px solid #dddddd;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #dddddd;
-}
 
 center {
 
