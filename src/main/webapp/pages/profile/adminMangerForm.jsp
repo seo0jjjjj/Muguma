@@ -34,12 +34,13 @@
 
 </head>
 <body>
+<!-- 왼쪽 탭 바 -->
 	<div class=container>
 		<div class="side">
 			<div class="side_logo">
 				<a href="../main/main.jsp" style="color: inherit;"><h1>MUGEMA</h1></a>
 			</div>
-			<div class="side_profile"></div>
+			<!-- 탭 바 메뉴 -->
 			<div class="side_state">
 				<ul>
 					<li><a href="myHome.jsp">개인정보</a></li>
@@ -48,20 +49,21 @@
 				</ul>
 			</div>
 		</div>
+		<!-- 메뉴 화면 출력 -->
 		<div class="main">
 			<table class="userTable"
-				style="width: 100%; border: 1px solid #444444; border-collapse: collapse;">
+				border="1" style="width: 100%; border: 1px solid #444444; border-collapse: collapse;">
 				<!-- 유저 데이터 -->
 				<h3>유저 데이터 출력</h3>
 				<tr>
-					<th style="border: 1px solid #444444;">고유번호</th>
-					<th style="border: 1px solid #444444;">아이디</th>
-					<th style="border: 1px solid #444444;">비밀번호</th>
-					<th style="border: 1px solid #444444;">이름</th>
-					<th style="border: 1px solid #444444;">이메일</th>
-					<th style="border: 1px solid #444444;">전화번호</th>
-					<th style="border: 1px solid #444444;">성</th>
-					<th style="border: 1px solid #444444;">권한</th>
+					<th>고유번호</th>
+					<th>아이디</th>
+					<th>비밀번호</th>
+					<th>이름</th>
+					<th>이메일</th>
+					<th>전화번호</th>
+					<th>성</th>
+					<th>권한</th>
 				</tr>
 				<tbody>
 					<%
@@ -70,14 +72,14 @@
 							for(int i=0;i<list.size();i++){
 					%>
 					<tr>
-						<td style="border: 1px solid #444444; text-align: center;"><%=list.get(i).getUid()%></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getUserID() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getUserPassword() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getUserName() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getUserEmail() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getUserTel() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getSex() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getAuthority() %></td>
+						<td style="text-align: center;"><%=list.get(i).getUid()%></td>
+						<td><%=list.get(i).getUserID() %></td>
+						<td><%=list.get(i).getUserPassword() %></td>
+						<td><%=list.get(i).getUserName() %></td>
+						<td><%=list.get(i).getUserEmail() %></td>
+						<td><%=list.get(i).getUserTel() %></td>
+						<td><%=list.get(i).getSex() %></td>
+						<td><%=list.get(i).getAuthority() %></td>
 					</tr>
 					<%
 							}
@@ -86,14 +88,14 @@
 
 			</table>
 			<table class="borderTable"
-				style="width: 100%; border: 1px solid #444444; border-collapse: collapse;">
+				border="1" style="width: 100%; border: 1px solid #444444; border-collapse: collapse;">
 				<!-- 게시판 데이터 -->
 				<h3>게시판 출력</h3>
 				<tr>
-					<th style="border: 1px solid #444444;">번호</th>
-					<th style="border: 1px solid #444444;">제목</th>
-					<th style="border: 1px solid #444444;">작성자</th>
-					<th style="border: 1px solid #444444;">날짜</th>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>날짜</th>
 				</tr>
 				<tbody>
 					<%
@@ -101,12 +103,12 @@
 						ArrayList<BorderDTO> borderList=borderDAO.getBorder();
 							for(int i=0;i<borderList.size();i++){
 					%>
-					<tr>
-						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getBid()%></td>
-						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getTitle()%></td>
-						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getUserID()%></td>
-						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getDate()%></td>
-						<td style="border: 1px solid #444444; text-align: center;"><button
+					<tr align="center">
+						<td><%=borderList.get(i).getBid()%></td>
+						<td><%=borderList.get(i).getTitle()%></td>
+						<td><%=borderList.get(i).getUserID()%></td>
+						<td><%=borderList.get(i).getDate()%></td>
+						<td><button
 								onclick="location.href='./border_remove.jsp?id=<%=borderList.get(i).getBid() %>'"
 								class="btn-remove">삭제하기</button></td>
 					</tr>

@@ -20,13 +20,13 @@
 
 </head>
 <body>
+<!-- 왼쪽 탭 바 -->
 	<div class=container>
 		<div class="side">
 			<div class="side_logo">
 				<a href="../main/main.jsp" style="color: inherit;"><h1>MUGEMA</h1></a>
 			</div>
-			<div class="side_profile">
-		</div>
+			<!-- 탭 바 메뉴 -->
 			<div class="side_state">
 				<ul>
 					<li> <a href="myHome.jsp">개인정보</a></li>
@@ -36,6 +36,7 @@
 				</ul>
 			</div>
 		</div>
+		<!-- 메뉴 화면 출력 -->
 		<div class="main">
 			<!-- 첫번째 박스 -->		
 			<div class="main_item">

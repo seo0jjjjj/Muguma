@@ -42,12 +42,13 @@ if (userdto.getAuthority().equals("admin")) {
 
 </head>
 <body>
+<!-- 왼쪽 탭 바 -->
 	<div class=container>
 		<div class="side">
 			<div class="side_logo">
 				<a href="../main/main.jsp" style="color: inherit;"><h1>MUGEMA</h1></a>
 			</div>
-			<div class="side_profile"></div>
+			<!-- 탭 바 메뉴 -->
 			<div class="side_state">
 				<ul>
 					<li><a><h3>개인정보</h3></a></li>
@@ -56,6 +57,7 @@ if (userdto.getAuthority().equals("admin")) {
 				</ul>
 			</div>
 		</div>
+		<!-- 메뉴 화면 출력 -->
 		<div class="main">
 			<!-- 첫번째 박스 -->
 			<div class="main_item">
@@ -70,12 +72,12 @@ if (userdto.getAuthority().equals("admin")) {
 			<!-- 세번째 박스 -->
 			<div class="main_item">
 				<h3>내가 쓴 글</h3>
-				<table class="borderWriteTable" style="width: 100%;border: 1px solid #444444;border-collapse: collapse;">
+				<table class="borderWriteTable" border="1" style="width: 100%; border: 1px solid #444444; border-collapse: collapse;">
 					<tr>
-						<th style="border: 1px solid #444444;">번호</th>
-						<th style="border: 1px solid #444444;">제목</th>
-						<th style="border: 1px solid #444444;">작성자</th>
-						<th style="border: 1px solid #444444;">작성일</th>
+						<th>번호</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>작성일</th>
 					</tr>
 					<%
 						String userName=userdto.getUserName();
@@ -83,11 +85,11 @@ if (userdto.getAuthority().equals("admin")) {
 						ArrayList<BorderDTO> list=borderDAO.getWriteBorder(userName);
 						for(int i=0;i<list.size();i++){
 					%>
-					<tr>
-						<td style="border: 1px solid #444444; text-align: center;"><%= list.get(i).getBid() %></td>
-						<td style="border: 1px solid #444444; text-align: center;"><%=list.get(i).getTitle() %></td>
-						<td style="border: 1px solid #444444; text-align: center;"><%=list.get(i).getUserID() %></td>
-						<td style="border: 1px solid #444444; text-align: center;"><%=list.get(i).getDate() %></td>
+					<tr align="center">
+						<td><%= list.get(i).getBid() %></td>
+						<td><%=list.get(i).getTitle() %></td>
+						<td><%=list.get(i).getUserID() %></td>
+						<td><%=list.get(i).getDate() %></td>
 					</tr>
 					<%
 						}
