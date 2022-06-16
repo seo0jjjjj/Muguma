@@ -1,7 +1,9 @@
+<%@page import="dto.BorderDTO"%>
+<%@page import="dao.BorderDAO"%>
+<%@page import="dto.UserDTO"%>
 <%@page import="dao.UserDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.io.PrintWriter" %>
-<%@page import="dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,6 +49,7 @@
 		</div>
 		<div class="main">
 				<table class="userTable" style="width: 100%;border: 1px solid #444444;border-collapse: collapse;">
+				<!-- 유저 데이터 -->
 				<h3>유저 데이터 출력</h3>
 					<tr>
 						<th style="border: 1px solid #444444;">고유번호</th>
@@ -65,7 +68,7 @@
 							for(int i=0;i<list.size();i++){
 					%>
 						<tr>
-							<td style="border: 1px solid #444444;"><%=list.get(i).getUid()%></td>
+							<td style="border: 1px solid #444444; text-align: center;"><%=list.get(i).getUid()%></td>
 							<td style="border: 1px solid #444444;"><%=list.get(i).getUserID() %></td>
 							<td style="border: 1px solid #444444;"><%=list.get(i).getUserPassword() %></td>
 							<td style="border: 1px solid #444444;"><%=list.get(i).getUserName() %></td>
@@ -77,6 +80,33 @@
 						<%
 							}
 						%>
+					</tbody>
+				
+				</table>
+				<table class="borderTable" style="width: 100%;border: 1px solid #444444;border-collapse: collapse;">
+				<!-- 게시판 데이터 -->
+				<h3>게시판 출력</h3>
+					<tr>
+						<th style="border: 1px solid #444444;">번호</th>
+						<th style="border: 1px solid #444444;">제목</th>
+						<th style="border: 1px solid #444444;">작성자</th>
+						<th style="border: 1px solid #444444;">날짜</th>
+					</tr>
+					<tbody>
+					<%
+						BorderDAO borderDAO=new BorderDAO();
+						ArrayList<BorderDTO> borderList=borderDAO.getBorder();
+							for(int i=0;i<borderList.size();i++){
+					%>
+					<tr>
+						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getBid()%></td>
+						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getTitle()%></td>
+						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getUserID()%></td>
+						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getDate()%></td>
+					</tr>
+					<%
+							}
+					%>
 					</tbody>
 				</table>
 		</div>

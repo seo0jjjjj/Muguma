@@ -69,7 +69,7 @@ if (userdto.getAuthority().equals("admin")) {
 			</div>
 			<!-- 세번째 박스 -->
 			<div class="main_item">
-				<h3><%=isAuthority ? "내가 쓴 글" : "고객센터 문의 글"%></h3>
+				<h3>내가 쓴 글</h3>
 				<table class="borderWriteTable" style="width: 100%;border: 1px solid #444444;border-collapse: collapse;">
 					<tr>
 						<th style="border: 1px solid #444444;">번호</th>
@@ -84,10 +84,10 @@ if (userdto.getAuthority().equals("admin")) {
 						for(int i=0;i<list.size();i++){
 					%>
 					<tr>
-						<td style="border: 1px solid #444444;"><%= list.get(i).getBid() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getTitle() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getUserID() %></td>
-						<td style="border: 1px solid #444444;"><%=list.get(i).getDate() %></td>
+						<td style="border: 1px solid #444444; text-align: center;"><%= list.get(i).getBid() %></td>
+						<td style="border: 1px solid #444444; text-align: center;"><%=list.get(i).getTitle() %></td>
+						<td style="border: 1px solid #444444; text-align: center;"><%=list.get(i).getUserID() %></td>
+						<td style="border: 1px solid #444444; text-align: center;"><%=list.get(i).getDate() %></td>
 					</tr>
 					<%
 						}
