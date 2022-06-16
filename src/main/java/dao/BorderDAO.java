@@ -136,4 +136,32 @@ public class BorderDAO {
 		}
 		return datas;
 	}
+	
+	/// 내가 쓴 글 출력
+		public ArrayList<BorderDTO> getWriteBorder(String id) {
+			connect();
+			sql = "select * from Border where userID=?";
+			ArrayList<BorderDTO> datas = new ArrayList<BorderDTO>();
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+
+				while (rs.next()) {
+					BorderDTO border = new BorderDTO();
+					border.setBid(rs.getInt("bid"));
+					border.setTitle(rs.getString("title"));
+					border.setUserID(rs.getString("userID"));
+					border.setContent(rs.getString("content"));
+					border.setDate(rs.getString("date"));
+					datas.add(border);
+				}
+				rs.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				disconnect();
+			}
+			return datas;
+		}
 }
