@@ -1,4 +1,5 @@
 
+<%@page import="dao.DBCon"%>
 <%@page import="dao.BasketDAO"%>
 <%@page import="mail.HashCreater"%>
 <%@page import="mail.MailSender"%>
@@ -19,7 +20,7 @@
 	<%=	UserDAO.getInstance().findUid("seo0jjjjj@gmail.com","sample1234")%>
 	--%>
 	<%
-	BasketDAO.getInstance().getDB(3);
+	DBCon.getInstance()
 	%>
 
 

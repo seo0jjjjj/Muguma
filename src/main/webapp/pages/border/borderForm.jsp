@@ -53,14 +53,13 @@ else {
 </head>
 <body>
 
-
 	<div id="navbar">
 		<ul id="one">
-			<li id="logo"><a class="white_font" href="../main/main.jsp"><i
+			<li id="logo"><a class="white_font" href=""><i
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
-			<li class="fl"><a class="white_font" href="#"><i
+			<li class="fl"><a class="white_font" href="../basket/basket_show.jsp"><i
 					class="fa-solid fa-bag-shopping icon"></i></a></li>
 			<li class="fl"><a class="white_font" href="../profile/myHome.jsp"><i
 					class="fa-solid fa-user icon"></i></a></li>
@@ -74,7 +73,8 @@ else {
 			<li class="fl"><a href="../login/logout.jsp"><%= isLogin ? "로그아웃" : "" %></a></li>
 			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "로그인" %></a></li>
 			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "회원가입" %></a></li>
-			<li class="fl"><a href="#">고객센터</a></li>
+			<li class="fl"><a href="../border/borderForm.jsp">게시판</a></li>
+			<li class="fl"><a href="../serviceCenter/serviceCenterForm.jsp">고객센터</a></li>
 		</ul>
 	</div>
 
