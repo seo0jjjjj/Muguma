@@ -136,8 +136,38 @@ public class BorderDAO {
 		}
 		return datas;
 	}
+	//bid로 글 조회
+	public BorderDTO getBorderBybid(int bid) {
+		connect();
+		String date = getDate();
+		BorderDTO border = new BorderDTO();
+		try {
+			sql = "select * from Border where bid=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bid);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				border.setBid(rs.getInt("bid"));
+				border.setTitle(rs.getString("title"));
+				border.setUserID(rs.getString("userID"));
+				border.setContent(rs.getString("content"));
+				border.setDate(rs.getString("date"));
+			}
+
+			rs.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			border = null;
+		} finally {
+			disconnect();
+
+			return border;
+		}
+	}
 	
-	/// 내가 쓴 글 출력
+	
+	
+	/// 내가 쓴 글 모두 ArrayList로 반환
 		public ArrayList<BorderDTO> getWriteBorder(String id) {
 			connect();
 			sql = "select * from Border where userID=?";

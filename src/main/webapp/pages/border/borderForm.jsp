@@ -32,11 +32,11 @@ else {
 <head>
 <meta charset="UTF-8">
 
-<title>무그마 스토어 | 게시판 조회</title><link rel="stylesheet" href="main_style.css">	
-<!--  부트스트랩  -->
+<title>무그마 스토어 | 게시판 조회</title>
+
+<!-- 부트스트랩 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 <!--노토산 글씨체-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <!--노토산 글씨체-->
@@ -48,11 +48,10 @@ else {
 
 	<script src="https://kit.fontawesome.com/68a70dfda4.js"
 	crossorigin="anonymous"></script>
+
+
 	<link href="border_style.css" rel="stylesheet">
 <link href="basic_page_style.css" rel="stylesheet">
-
-
-
 
 </head>
 <body>
@@ -87,16 +86,15 @@ else {
 
 <div class="border">
 
-	<div class="row">
-		<table class="table-warning">
-			<thead>
+	<div class="row" style="    background: white;
+    text-align: center;">
+		<table class="table">
 			<tr>
-				<th scope="col">번호</th>
-				<th scope="col">제목</th>
-				<th scope="col">작성자</th>
-				<th scope="col">작성일</th>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>작성일</th>
 			</tr>
-			</thead>
 			<tbody>
 				<%
 					BorderDAO borderDAO = new BorderDAO();
@@ -104,7 +102,7 @@ else {
 					for(int i=0;i<list.size();i++) {
 				%>
 				<tr onClick="location.href=<%=""+"'./bordershow.jsp?bid="+list.get(i).getBid()+";'"%>">
-					<th scope="row"><%=list.get(i).getBid() %></th>
+					<td><%=list.get(i).getBid() %></td>
 					<td><%=list.get(i).getTitle()%></td>
 					<td><%=list.get(i).getUserID() %></td>
 					<td><%=DateManager.getDate()%></td>
@@ -113,13 +111,15 @@ else {
 					}
 				%>
 			</tbody>
+			<tfoot>
+		
+   <tr><td colspan=4>각 항목을 클릭할 경우 상세글을 볼 수 있습니다!</td></tr>
+			</tfoot>
 		</table>
 		<center>
-		
-		<button onclick="location.href = './writeForm.jsp';" class="btn">글쓰러 가기</button>
+		<button onclick="location.href = './writeForm.jsp'" class="btn">글쓰러 가기</button>
 	</center>
 	</div>
 </div>
-
 </body>
 </html>
