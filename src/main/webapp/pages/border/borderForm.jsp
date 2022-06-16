@@ -105,7 +105,7 @@ else {
 					<td><%=list.get(i).getBid() %></td>
 					<td><%=list.get(i).getTitle()%></td>
 					<td><%=list.get(i).getUserID() %></td>
-					<td><%=DateManager.getDate()%></td>
+					<td><%=list.get(i).getDate()%></td>
 				</tr>
 			<%
 					}

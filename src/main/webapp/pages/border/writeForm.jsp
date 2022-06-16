@@ -81,10 +81,46 @@ else {
 
 	<!-- NAB바 아래부분 -->
 
+<!-- NAB바 아래부분 -->
+<center>
 
 
-	</div>
+</div>
 	<!-- 글쓰기 양식 보여지는 문-->
+	<div class="border">	
+		<div class="row">
+		<div class="table">
+			<form action="write.jsp" method="post">
+				<table style="text-align: center; border: 1px solid #dddddd; background-color:white;">
+					<thead>
+						<tr>
+							<th colspan="2" style="background-color: #eeeeee; text-align: center;">게시판 글쓰기</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td><input type="text" class=" " placeholder="글 제목" name="title" maxlength="50"
+						style="font-size:32px; width:600px"
+						> 
+						</td>
+						</tr>
+						<tr>
+						<td><textarea placeholder="글 내용" name="content" maxlength="1024" style="height:350px; width: 600px"></textarea>
+						</td>
+						</tr>
+					</tbody>
+					<tfoot>
+					
+				<tr>
+					<td align="center"><button class="btn">글 쓰기</button><td>
+				</tr>
+					</tfoot>
+				</table>
+
+				</form>
+		</div>
+	</div>
+</center>
 
 
 		
