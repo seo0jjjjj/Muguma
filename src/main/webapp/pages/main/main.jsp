@@ -46,7 +46,7 @@ else {
 <body>
 	<div id="navbar">
 		<ul id="one">
-			<li id="logo"><a class="white_font" href=""><i
+			<li id="logo"><a class="white_font" href="./../main/main.jsp"><i
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
@@ -65,7 +65,6 @@ else {
 			<li class="fl"><a href="../login/loginForm.html"><%= isLogin ? "" : "로그인" %></a></li>
 			<li class="fl"><a href="../register/registerForm.html"><%= isLogin ? "" : "회원가입" %></a></li>
 			<li class="fl"><a href="../border/borderForm.jsp">게시판</a></li>
-			<li class="fl"><a href="../serviceCenter/serviceCenterForm.jsp">고객센터</a></li>
 		</ul>
 	</div>
 
