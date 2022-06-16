@@ -40,7 +40,15 @@
 			<!-- 첫번째 박스 -->		
 			<div class="main_item">
 				<h3>비밀번호</h3>
-				<p><%=userdto.getUserPassword() %></p>
+				<form action="changePassword.jsp" method="post" name="changePassword">
+					변경하실 비밀번호 :
+					<input type="text" name="userPassword" class="inputbox"  maxlength="20" placeholder="비밀번호를 입력하세요"><br>
+					<!-- 테스트용 
+					비밀번호 재입력:
+					<input type="text" name="passwordCheck" class="inputbox"  maxlength="20" placeholder="비밀번호를 입력하세요"><br>
+					-->
+					<button> 비밀번호 변경</button>
+				</form>
 			</div>
 			
 			
