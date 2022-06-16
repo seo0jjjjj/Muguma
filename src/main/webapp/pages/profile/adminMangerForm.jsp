@@ -103,6 +103,9 @@
 						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getTitle()%></td>
 						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getUserID()%></td>
 						<td style="border: 1px solid #444444; text-align: center;"><%=borderList.get(i).getDate()%></td>
+						<td style="border: 1px solid #444444; text-align: center;"><button
+							onclick="location.href='./border_remove.jsp?id=<%=borderList.get(i).getBid() %>'"
+							class="btn-remove">삭제하기</button></td>
 					</tr>
 					<%
 							}

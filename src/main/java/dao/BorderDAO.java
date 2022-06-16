@@ -165,7 +165,20 @@ public class BorderDAO {
 		}
 	}
 	
-	
+	/// 글 삭제 
+	public void deleteBorder(int bid) {
+		connect();
+		sql="delete from Border where bid=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, bid);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			disconnect();
+		}
+	}
 	
 	/// 내가 쓴 글 모두 ArrayList로 반환
 		public ArrayList<BorderDTO> getWriteBorder(String id) {
