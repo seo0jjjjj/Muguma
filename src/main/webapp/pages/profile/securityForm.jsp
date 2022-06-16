@@ -40,14 +40,14 @@
 			<!-- 첫번째 박스 -->		
 			<div class="main_item">
 				<h3>비밀번호</h3>
-				<form action="changePassword.jsp" method="post" name="changePassword">
+				<form action="changePassword.jsp" method="post" name="form" onsubmit="return checkPassword(form.userPassword.value,form.userPassword2.value);">
 					변경하실 비밀번호 :
 					<input type="text" name="userPassword" class="inputbox"  maxlength="20" placeholder="비밀번호를 입력하세요"><br>
-					<!-- 테스트용 
+			
 					비밀번호 재입력:
-					<input type="text" name="passwordCheck" class="inputbox"  maxlength="20" placeholder="비밀번호를 입력하세요"><br>
-					-->
-					<button> 비밀번호 변경</button>
+					<input type="text" name="userPassword2" class="inputbox"  maxlength="20" placeholder="비밀번호를 입력하세요"><br>
+				
+					<button onsubmit=""> 비밀번호 변경</button>
 				</form>
 			</div>
 			
@@ -55,5 +55,33 @@
 			
 		</div>
 	</div>
+	<script>
+	/// 비밀번호 유효성 검사 
+	function checkPassword(userPassword, userPassword2) {//비밀번호가 입력되었는지 확인하기
+
+
+		var userPasswordRegExp = /^[a-zA-z0-9]{4,12}$/; //비밀번호 유효성 검사
+		if (!userPasswordRegExp.test(userPassword)) {
+			alert("비밀번호는 영문 대소문자와 숫자 4~12자리로 입력해야합니다!");
+			form.userPassword.value = "";
+			form.userPassword2.value = "";
+			form.userPassword.focus();
+			return false;
+		}
+		if (userPassword!=userPassword2) {
+			alert("비밀번호가 서로 일치하지 않습니다.");
+			form.userPassword.value = "";
+			form.userPassword2.value = "";
+			form.userPassword.focus();
+			return false;
+		}
+		//비밀번호 널방지
+		if (!checkExistData(userPassword, "비밀번호를")) {
+			form.userPassword2.focus();
+			return false;
+		}
+	}
+	
+	</script>
 </body>
 </html>
