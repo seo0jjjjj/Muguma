@@ -20,7 +20,12 @@
 		out.println("실패<br>");
 		out.println("<script>");
 		out.println("alert('[데이터베이스 연결오류] : DBCon클래스에서 DB 설정을 해주세요!')");
+		out.println("setTimeout(function() {");
+		out.println("alert('sql 문서를 다운로드합니다.');");
+		out.println("location.href='./create_table2.sql';}, 1000);"); 
 		out.println("</script>");
+		
+		return;
 	}
 	// DB 설정 성공!
 	else {
@@ -54,7 +59,12 @@
 		out.println("실패<br>");
 		out.println("<script>");
 		out.println("alert('[데이터베이스 Product 테이블 오류] : Product 테이블이 비어있거나, 테이블이 생성되지 않았습니다!')");
+		
+		out.println("setTimeout(function() {");
+		out.println("alert('sql 문서를 다운로드합니다.');");
+		out.println("location.href='./create_table2.sql';}, 1000);"); 
 		out.println("</script>");
+		return;
 
 	}
 
