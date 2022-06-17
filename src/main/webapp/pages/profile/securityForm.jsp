@@ -7,9 +7,21 @@
 <head>
 <link href="profile_style.css" rel="stylesheet">
 
+
 <%
 	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //로그인 정보를 담는 세션 객체
 	boolean isAuthority=false; // 권한페이지 출력여부 
+	
+	//로그인 상태 체크
+	if (userdto == null) {
+		//로그인이 아닐경우 로그인창으로 이동
+		out.println("<script>");
+		out.println("alert('보안설정 페이지에 접근하려면 로그인해주세요!')");
+		out.println("location.href='./../login/loginForm.html'");
+		out.println("</script>");
+		return ;
+
+	}
 	
 	if(userdto.getAuthority().equals("admin")){
 		isAuthority=true;

@@ -53,7 +53,6 @@ if (!request.getMethod().equals("POST")) {
 	}
 	// 등록 제대로 될 경우,
 	else {
-		// 가입한 아이디로 로그인해줌.
 		out.println("<script>");
 		out.println("alert('회원가입이 성공했습니다.');");
 		out.println("location.href = './../main/main.jsp';");

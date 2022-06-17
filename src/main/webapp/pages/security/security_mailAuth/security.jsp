@@ -10,7 +10,6 @@ request.setCharacterEncoding("UTF-8");
 
 
 
-
 <%
 String hashcode = ""; 
 String resultbody = "";
@@ -33,19 +32,6 @@ else {
 	resultbody = "test";
 	int resultUid = 0; // 비밀번호로 uid 검색한 결과
 	String resultId; // ID찾기 검색결과
-	
-	//이메일보내기		
-	hashcode = MailSender.getInstance().sendMail(userEmail);
-
-	
-	// 이메일 보내기 실패
-	if (hashcode.equals("error")) {
-		out.println("<script>");
-		out.println("alert('[이메일보내기 실패] 이메일을 보낼수없는 이메일 주소입니다. 또는 연타하면 안됩니다!!');");
-		out.println("location.href = './../security_form.html';");
-		out.println("</script>");
-		System.out.println("[security] 이메일 보내기 오류");
-	}
 
 	// id 찾기
 	if (userId == null) {
@@ -55,14 +41,25 @@ else {
 		// 아이디 찾기실패
 		if (resultId.equals("error")) {
 	out.println("<script>");
-	out.println("alert('아이디가 존재하지않음.');");
+	out.println("alert('이메일에 맞는 계정이 존재하지 않ㅅ브니다.');");
 	out.println("location.href = './../security_form.html';");
 	out.println("</script>");
 	System.out.println("[아이디찾기] DB검색 결과 : 이메일에 데이터가 존재하지않음.");
 		}
 		// 아이디 찾기 성공
 		else {
-	
+			//이메일보내기		
+			hashcode = MailSender.getInstance().sendMail(userEmail);
+
+			
+			// 이메일 보내기 실패
+			if (hashcode.equals("error")) {
+				out.println("<script>");
+				out.println("alert('[이메일보내기 실패] 이메일을 보낼수없는 이메일 주소입니다. 또는 연타하면 안됩니다!!');");
+				out.println("location.href = './../security_form.html';");
+				out.println("</script>");
+				System.out.println("[security] 이메일 보내기 오류");
+			}
 			 StringBuffer buff = new StringBuffer();
 			 buff.append("아이디 찾기 성공! ");
 			 buff.append("아이디는 [ ");
@@ -86,6 +83,18 @@ else {
 		out.println("</script>");
 		System.out.println("[비밀번호찾기] DB검색 결과 : 아이디와 이메일에 맞는 데이터 존재하지않음.");
 		} else {
+			//이메일보내기		
+			hashcode = MailSender.getInstance().sendMail(userEmail);
+
+			
+			// 이메일 보내기 실패
+			if (hashcode.equals("error")) {
+				out.println("<script>");
+				out.println("alert('[이메일보내기 실패] 이메일을 보낼수없는 이메일 주소입니다. 또는 연타하면 안됩니다!!');");
+				out.println("location.href = './../security_form.html';");
+				out.println("</script>");
+				System.out.println("[security] 이메일 보내기 오류");
+			}
 			//비밀번호찾기성공
 			UserDAO.getInstance().updatePW(resultUid, hashcode);
 	

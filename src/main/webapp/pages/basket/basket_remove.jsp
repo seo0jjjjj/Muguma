@@ -16,7 +16,7 @@ if(userdto==null){
 		out.println("alert('잘못된 접근입니다.')");
 		out.println("location.href='./basket_show.jsp'");
 		out.println("</script>");
-		
+		return;
 	}
  
 else{

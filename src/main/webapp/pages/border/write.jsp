@@ -1,9 +1,9 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="dao.BorderDAO" %>
 <%@page import="dto.UserDTO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="borderInfo" class="dto.BorderDTO"></jsp:useBean>
 <jsp:setProperty property="title" name="borderInfo"/>
 <jsp:setProperty property="content" name="borderInfo"/>
@@ -11,14 +11,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <%
 	String userID=null;
 	String userName=null;
-	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //·Î±×ÀÎ Á¤º¸¸¦ ´ã´Â ¼¼¼Ç °´Ã¼
+	UserDTO userdto = (UserDTO) session.getAttribute("userInfo"); //ë¡œê·¸ì¸ ì •ë³´ë¥¼ ë‹´ëŠ” ì„¸ì…˜ ê°ì²´
 	
 	if(userdto!=null){
 		userID = userdto.getUserID();
@@ -26,48 +26,48 @@
 	}else{
 		PrintWriter script= response.getWriter();
 		script.println("<script>");
-		script.println("alert('·Î±×ÀÎÀ» ÇÏ¼¼¿ä')");
+		script.println("alert('ë¡œê·¸ì¸ì„ í•˜ì„¸ìš”')");
 		script.println("location.href='./../main/main.jsp'"); 
 		script.println("</script>");
 	}
 	
-	//sessionÀ» ¹Ş¾Æ ¾Æ¹«°Íµµ ¾ø´Â °æ¿ì 
+	//sessionì„ ë°›ì•„ ì•„ë¬´ê²ƒë„ ì—†ëŠ” ê²½ìš° 
 	if(userID==null){
 		PrintWriter script= response.getWriter();
 		script.println("<script>");
-		script.println("alert('·Î±×ÀÎÀ» ÇÏ¼¼¿ä')");
+		script.println("alert('ë¡œê·¸ì¸ì„ í•˜ì„¸ìš”')");
 		script.println("location.href='./../main/main.jsp'"); 
 		script.println("</script>");
-		//sessionÀ» ¹Ş¾Æ userID°¡ ÀÖÀ» °æ¿ì 
+		//sessionì„ ë°›ì•„ userIDê°€ ìˆì„ ê²½ìš° 
 	}else {
 		String title=borderInfo.getTitle();
 		String content=borderInfo.getContent();
-		//±Û¾µ¶§ ºó °ø°£ÀÌ ÀÖÀ» °æ¿ì 
+		//ê¸€ì“¸ë•Œ ë¹ˆ ê³µê°„ì´ ìˆì„ ê²½ìš° 
 		if(borderInfo.getTitle()==null||borderInfo.getContent()==null){
 			PrintWriter script= response.getWriter();
 			script.println("<script>");
-			script.println("alert('ºó °ø°£ÀÌ ÀÖ½À´Ï´Ù.')");
+			script.println("alert('ë¹ˆ ê³µê°„ì´ ìˆìŠµë‹ˆë‹¤.')");
 			script.println("history.back()");
 			script.println("</script>");
-		//±Û ¾²±â 
+		//ê¸€ ì“°ê¸° 
 		}else{
 			BorderDAO borderDAO=new BorderDAO();
 			int result=borderDAO.setBorder(borderInfo.getTitle(), userName, borderInfo.getContent());
-			//DB¿À·ù 
+			//DBì˜¤ë¥˜ 
 			if(result==-1){
 				PrintWriter script= response.getWriter();
 				script.println("<script>");
-				script.println("alert('±Û¾²±â¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.')");
+				script.println("alert('ê¸€ì“°ê¸°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.')");
 				script.println("history.back()");
 				script.println("</script>");
-			//±Û ¾²±â 
+			//ê¸€ ì“°ê¸° 
 			}else {
 				PrintWriter script= response.getWriter();
 				script.println("<script>");
-				System.out.println("¢º ÀÛ¼ºÀÚ:"+userID);
-				System.out.println("¢º Á¦¸ñ:"+title);
-				System.out.println("¢º ³»¿ë:"+content);
-				script.println("alert('±ÛÀÌ Á¤»óÀûÀ¸·Î µî·ÏµÇ¾ú½À´Ï´Ù.')");
+				System.out.println("â–¶ ì‘ì„±ì:"+userID);
+				System.out.println("â–¶ ì œëª©:"+title);
+				System.out.println("â–¶ ë‚´ìš©:"+content);
+				script.println("alert('ê¸€ì´ ì •ìƒì ìœ¼ë¡œ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.')");
 				script.println("location.href='borderForm.jsp'");
 				script.println("</script>");
   

@@ -62,7 +62,7 @@ else {
 
 		<div id="navbar">
 		<ul id="one">
-			<li id="logo"><a class="white_font" href=""><i
+			<li id="logo"><a class="white_font" href="../main/main.jsp"><i
 					class="fa-solid fa-paintbrush"></i> MUGUMA</a></li>
 
 
@@ -93,7 +93,7 @@ else {
 		<div class="row">
 			<table class="table">
 				<tr>
-					<th>번호</th>
+					<th>그림고유번호</th>
 					<th>그림</th>
 					<th>그림제목</th>
 					<th>작가</th>

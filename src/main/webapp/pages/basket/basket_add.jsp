@@ -17,6 +17,7 @@
 		out.println("alert('장바구니에 등록하려면 로그인해주세요!')");
 		out.println("location.href='./../login/loginForm.html'");
 		out.println("</script>");
+		return;
 
 	}//로그인상태+pid가 널이 아닐 경우!
 	else{

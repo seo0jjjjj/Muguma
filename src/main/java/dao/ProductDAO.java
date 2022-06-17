@@ -1,5 +1,5 @@
 /*
-create table product(
+	create table product(
 	pid int default 1,
     productName varchar(10),
     productCategory varchar(10),
