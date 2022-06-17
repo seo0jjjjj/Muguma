@@ -48,6 +48,7 @@
 		out.println("<script>");
 		out.println("setTimeout(function() {");
 		out.println("alert('초기화 성공! 메인페이지로 이동합니다!!!');");
+
 		out.println("location.href='./pages/main/main.jsp';}, 3000);"); 
 		out.println("</script>");
 
