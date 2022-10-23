@@ -6,7 +6,8 @@
 
 <p> 
 ### 시연영상
-https://user-images.githubusercontent.com/54611807/197398766-84eb4571-5894-4a59-8faa-b16c60b35134.mp4
+
+  
 
 <hr>
 
