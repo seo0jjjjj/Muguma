@@ -12,8 +12,9 @@
 3. 게시판과 관리자 페이지
 
 ## 시연영상
+<p>
 <video src="https://user-images.githubusercontent.com/54611807/197399059-3ff911a6-2ea8-4c5b-a40c-ff9df9f8ef81.mp4"/>
-
+</p>
 
 
 
