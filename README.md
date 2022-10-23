@@ -17,4 +17,5 @@
 
 
 
-
+## 시스템 구조도
+![image](https://user-images.githubusercontent.com/54611807/197399255-9df68276-675a-42af-8581-48179ff4cbb2.png)
