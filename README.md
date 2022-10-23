@@ -17,6 +17,8 @@
 </p>
 
 
+## 개발 일정 및 기획
+![image](https://user-images.githubusercontent.com/54611807/197399321-52161b03-4cdb-4aef-b631-7bdaea214fe7.png)
 
 ## 시스템 구조도
 ![image](https://user-images.githubusercontent.com/54611807/197399255-9df68276-675a-42af-8581-48179ff4cbb2.png)
