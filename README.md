@@ -1,11 +1,11 @@
 <center> <h1>Muguma</h1> 
 2022_3학년1학기 웹프로그래밍 수업 기말 팀 프로젝트</center>
 <p>
-  개발환경: <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=black"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=black"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/> <img src="https://cdn-icons-png.flaticon.com/512/28/28968.png" width="30px" height="30px"/> + vscode, ecsipe
+  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=black"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=black"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=black"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/> <img src="https://cdn-icons-png.flaticon.com/512/28/28968.png" width="30px" height="30px"/> 
 
 </p>
 
-## 핵심 구현 기능
+## 핵심 구현 및 기능
 1. DB 연동(DBMS) -> 로그인, 상품구매, 장바구니, 유저권한
 2. SMP를 통한 메일 인증 (0:41)
 3. 게시판과 관리자 페이지
