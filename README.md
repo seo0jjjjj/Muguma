@@ -9,6 +9,10 @@
 
   
 
+<video src="https://user-images.githubusercontent.com/54611807/197399059-3ff911a6-2ea8-4c5b-a40c-ff9df9f8ef81.mp4"/>
+
+
+
 <hr>
 
 ### 핵심 구현 기능
