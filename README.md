@@ -17,7 +17,10 @@
 
 
 ## 개발 일정 및 기획
-![image](https://user-images.githubusercontent.com/54611807/197399321-52161b03-4cdb-4aef-b631-7bdaea214fe7.png)
+![image](https://user-images.githubusercontent.com/54611807/197399574-fcc102c4-efd7-4d64-b38e-a04a54c9f3d6.png)
 
 ## 시스템 구조도
-![image](https://user-images.githubusercontent.com/54611807/197399255-9df68276-675a-42af-8581-48179ff4cbb2.png)
+![image](https://user-images.githubusercontent.com/54611807/197399570-b720d2fd-bd15-4e30-83f7-6ef0eeda400a.png)
+
+## 클래스 구조
+![image](https://user-images.githubusercontent.com/54611807/197399614-83a54b2a-ec6e-4c7c-a0cf-e2136fb51c15.png)
