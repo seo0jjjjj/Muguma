@@ -2,7 +2,7 @@
 2022 웹프로그래밍 수업 기말과제 
 
 <img src="https://img.shields.io/badge/이름-색상코드?style=flat-square&logo=로고명&logoColor=로고색"/>
-<img src="https://img.shields.io/badge/JavaScript-#F7DF1E?style=flat-square&logo=JavaScript&logoColor=#F7DF1E"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=White"/>
 <img src="https://img.shields.io/badge/이름-색상코드?style=flat-square&logo=로고명&logoColor=로고색"/>
 <img src="https://img.shields.io/badge/이름-색상코드?style=flat-square&logo=로고명&logoColor=로고색"/>
 _______________________________________________________________________________
